@@ -1,11 +1,7 @@
 import React from 'react'
 import heroImage from '../assets/HeroImage.png'
 import innovateDisplayImage from '../assets/InnovateDisplayImage.png'
-import ExploreImageOne from '../assets/ExploreImageOne.png'
-import ExploreImageTwo from '../assets/ExploreImageTwo.png'
-import ExploreImageThree from '../assets/ExploreImageThree.png'
-import ExploreImageFour from '../assets/ExploreImageFour.png'
-import ExploreImageFive from '../assets/ExploreImageFive.png'
+
 import IlliminationImage from '../assets/IlliminationImage.png'
 
 import IlliminationLogoOneImage from '../assets/IlliminationLogoOne.png'
@@ -33,6 +29,7 @@ import { CiDiscount1 } from 'react-icons/ci';
 import { VscTools } from 'react-icons/vsc';
 import { HiOutlineGlobeAlt } from 'react-icons/hi2';
 import FAQ from '../components/FAQ'
+import Explore from '../components/Explore'
 
 
 const cardData = [
@@ -86,9 +83,9 @@ const Home = () => {
                         Your Trusted Partner in Every <br /> Display Innovation
                     </div>
                     <div className='innovateDisplay-description'>We deliver cutting-edge LED display solutions with seamless service from concept to completion.</div>
-                    <div className='row'>
+                    <div className='row mt-5'>
                         {cardData.map((card, index) => (
-                            <div key={index} className='col-lg-4 col-md-6'>
+                            <div key={index} className='col-lg-4 col-md-6 mb-2'>
                                 <div className='innovateDisplay-card'>
                                     <div className='innovateDisplay-card-title'>{card.title}</div>
                                     <div className='innovateDisplay-card-description'>{card.description}</div>
@@ -190,203 +187,47 @@ const Home = () => {
                 </div>
             </div>
 
-            <div className='explore'>
-                <h1 className='explore-title'>
-                    Explore Our Range of <br /> Cutting-Edge LED Products
-                </h1>
+        <Explore/>
+            <div>
+                <div className='illumination'>
+                    <h1 className='illumination-title'>Bringing Brilliance to<br /> Every Corner of the Globe</h1>
+                    <p className='illumination-description' >From local events to global spectacles, our LED solutions have illuminated stages, streets, and summits worldwide.</p>
 
-                <div className='row'>
-                    <div className='col-md-12 my-5'>
-                        <div className='row'>
-                            <div className='col-md-5 mb-5'>
-                                <img src={ExploreImageOne} alt='Entrance Arch LED' width="100%" />
+                    <img src={IlliminationImage} alt='Illimation' width="100%" className="my-5" />
+
+                    <div className='my-5'>
+                        <div className='illimination-subtitle'>Trusted By</div>
+
+                        <div className='d-flex flex-wrap justify-content-center mt-5 align-items-center'>
+                            <div className='logo-container m-4'>
+                                <img src={IlliminationLogoOneImage} alt='Client Logo' />
                             </div>
-                            <div className='col-md-7 mb-5'>
-                                <div className='d-flex gap-2 flex-column  justify-content-center w-100 h-100   '>
-                                    <h3 className='explore-subtitle'>Entrance Arch LED</h3>
-                                    <p className='explore-description'>The Entrance Arch LED display transforms any entrance into a captivating and unforgettable experience. Ideal for expos, summits, or grand openings, our arch displays feature vibrant, ultra-bright LEDs and customizable content to make a lasting impression.</p>
-                                    <div className="d-flex flex-row flex-wrap">
-                                        <div className="explore-button ">
-                                            High-Visibility
-                                        </div>
-                                        <div className="explore-button ">
-                                            Customizable Content
-                                        </div>
-                                        <div className="explore-button ">
-                                            Durable & Weatherproof
-                                        </div>
-                                    </div>
-
-                                </div>
+                            <div className='logo-container m-4'>
+                                <img src={IlliminationLogoTwoImage} alt='Client Logo' />
                             </div>
-                        </div>
-
-                    </div>
-
-                    <div className='col-md-12 my-5'>
-                        <div className='row'>
-                            <div className='col-md-12 mb-5'>
-                                <img src={ExploreImageTwo} alt='Flexible Wall LED' width="100%" />
+                            <div className='logo-container m-4'>
+                                <img src={IlliminationLogoThreeImage} alt='Client Logo' />
                             </div>
-                            <div className='col-md-12 mb-5'>
-                                <div className='d-flex gap-2 flex-column  justify-content-center align-items-center w-100 h-100   '>
-                                    <h3 className='explore-subtitle text-center'>Flexible Wall LED</h3>
-                                    <p className='explore-description text-center'>
-                                        The Flexible Wall LED is designed for maximum versatility, wrapping around curved walls or uniquely shaped structures.<br /> Perfect for museums, retail spaces, and creative installations, this display adds a touch of innovation.
-                                    </p>
-                                    <div className="d-flex flex-row flex-wrap">
-                                        <div className="explore-button ">
-                                            Bendable Panels
-                                        </div>
-                                        <div className="explore-button ">
-                                            High Resolution
-                                        </div>
-                                        <div className="explore-button ">
-                                            Lightweight Build
-                                        </div>
-                                        <div className="explore-button ">
-                                            Dynamic Content
-                                        </div>
-                                    </div>
-
-                                </div>
+                            <div className='logo-container m-4'>
+                                <img src={IlliminationLogoFourImage} alt='Client Logo' />
                             </div>
-                        </div>
-
-                    </div>
-
-                    <div className='col-md-12 my-5'>
-                        <div className='row'>
-                            <div className='col-md-5 mb-5'>
-                                <img src={ExploreImageThree} alt='Corporate Office Screen' width="100%" />
+                            <div className='logo-container m-4'>
+                                <img src={IlliminationLogoFiveImage} alt='Client Logo' />
                             </div>
-                            <div className='col-md-7 mb-5'>
-                                <div className='d-flex gap-2 flex-column  justify-content-center w-100 h-100   '>
-                                    <h3 className='explore-subtitle'>Corporate Office Screen</h3>
-                                    <p className='explore-description'>
-                                        Our Corporate Office LED screens bring your office to life, whether for conference rooms, lobbies, or digital dashboards. Enhance communication, showcase data, or impress clients with high-definition visuals.
-                                    </p>
-                                    <div className="d-flex flex-row flex-wrap">
-                                        <div className="explore-button ">
-                                            Crystal-Clear Clarity
-                                        </div>
-                                        <div className="explore-button ">
-                                            Versatile Mounting
-                                        </div>
-                                        <div className="explore-button ">
-                                            Professional Aesthetic
-                                        </div>
-                                    </div>
-
-                                </div>
+                            <div className='logo-container m-4'>
+                                <img src={IlliminationLogoSixImage} alt='Client Logo' />
                             </div>
-                        </div>
-                    </div>
-
-                    <div className='col-md-12 my-5'>
-                        <div className='row'>
-                            <div className='col-md-12 mb-5'>
-                                <img src={ExploreImageFour} alt='Digital Kiosk' width="100%" />
+                            <div className='logo-container m-4'>
+                                <img src={IlliminationLogoSevenImage} alt='Client Logo' />
                             </div>
-                            <div className='col-md-12 mb-5'>
-                                <div className='d-flex gap-2 flex-column  justify-content-center align-items-center w-100 h-100   '>
-                                    <h3 className='explore-subtitle text-center'>Digital Kiosk</h3>
-                                    <p className='explore-description text-center'>
-                                        The Digital Kiosk is a versatile and engaging tool for wayfinding, information dissemination, and advertising. Suitable for <br /> malls, airports, events, and corporate environments, it provides intuitive, user-friendly interactions.
-                                    </p>
-                                    <div className="d-flex flex-row flex-wrap">
-                                        <div className="explore-button ">
-                                            Interactive Touchscreen
-                                        </div>
-                                        <div className="explore-button ">
-                                            Custom Branding
-                                        </div>
-                                        <div className="explore-button ">
-                                            Durable Design
-                                        </div>
-                                        <div className="explore-button ">
-                                            Remote Management
-                                        </div>
-                                    </div>
-
-                                </div>
+                            <div className='logo-container m-4'>
+                                <img src={IlliminationLogoEightImage} alt='Client Logo' />
                             </div>
-                        </div>
-
-                    </div>
-
-                    <div className='col-md-12 my-5'>
-                        <div className='row'>
-                            <div className='col-md-6 mb-5'>
-                                <img src={ExploreImageFive} alt='Corporate Office Screen' width="100%" />
+                            <div className='logo-container m-4'>
+                                <img src={IlliminationLogoNineImage} alt='Client Logo' />
                             </div>
-                            <div className='col-md-6 mb-5'>
-                                <div className='d-flex gap-2 flex-column  justify-content-center w-100 h-100   '>
-                                    <h3 className='explore-subtitle'>360 Degree LED Screen</h3>
-                                    <p className='explore-description'>
-                                        Our 90 and 360 Degree LED Screens create immersive experiences, ensuring content is seen from all perspectives. Ideal for high-traffic areas like trade shows, malls, and stadiums.
-                                    </p>
-                                    <div className="d-flex flex-row flex-wrap">
-                                        <div className="explore-button ">
-                                            360-Degree Visibility
-                                        </div>
-                                        <div className="explore-button ">
-                                            Vivid and Immersive
-                                        </div>
-                                        <div className="explore-button ">
-                                            Modular Design
-                                        </div>
-                                        <div className="explore-button ">
-                                            Interactive Capabilities
-                                        </div>
-                                    </div>
 
-                                </div>
-                            </div>
                         </div>
-                    </div>
-
-                </div>
-            </div>
-
-            <div className='illumination'>
-                <h1 className='illumination-title'>Bringing Brilliance to<br /> Every Corner of the Globe</h1>
-                <p className='illumination-description' >From local events to global spectacles, our LED solutions have illuminated stages, streets, and summits worldwide.</p>
-
-                <img src={IlliminationImage} alt='Illimation' width="100%" className="my-5" />
-
-                <div className='my-5'>
-                    <div className='illimination-subtitle'>Trusted By</div>
-
-                    <div className='d-flex flex-wrap justify-content-center mt-5 align-items-center'>
-                        <div className='logo-container m-4'>
-                            <img src={IlliminationLogoOneImage} alt='Client Logo' />
-                        </div>
-                        <div className='logo-container m-4'>
-                            <img src={IlliminationLogoTwoImage} alt='Client Logo' />
-                        </div>
-                        <div className='logo-container m-4'>
-                            <img src={IlliminationLogoThreeImage} alt='Client Logo' />
-                        </div>
-                        <div className='logo-container m-4'>
-                            <img src={IlliminationLogoFourImage} alt='Client Logo' />
-                        </div>
-                        <div className='logo-container m-4'>
-                            <img src={IlliminationLogoFiveImage} alt='Client Logo' />
-                        </div>
-                        <div className='logo-container m-4'>
-                            <img src={IlliminationLogoSixImage} alt='Client Logo' />
-                        </div>
-                        <div className='logo-container m-4'>
-                            <img src={IlliminationLogoSevenImage} alt='Client Logo' />
-                        </div>
-                        <div className='logo-container m-4'>
-                            <img src={IlliminationLogoEightImage} alt='Client Logo' />
-                        </div>
-                        <div className='logo-container m-4'>
-                            <img src={IlliminationLogoNineImage} alt='Client Logo' />
-                        </div>
-
                     </div>
 
                     <div className='row my-5 p-3'>
@@ -405,79 +246,80 @@ const Home = () => {
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    <div className='row my-3 p-3'>
-                        <div className='col-md-7 mb-3'>
-                            <div className='illumination-card'>
-                                <div className='illumination-card-image-container'>
+                <div className='row my-3 p-3'>
+                    <div className='col-md-7 mb-3'>
+                        <div className='illumination-card'>
+                            <div className='illumination-card-image-container'>
                                 <img src={ImageOne} alt='Card Image' className='illumination-card-image' width="100%" height="100%" />
-                                </div>
-                                <div className='d-flex justify-content-between align-items-center'>
-                                    <div className='illuminaion-card-title' > International Tech Expo</div>
-                                    <div className='illuminaion-card-text'>Arch LED Display</div>
-                                </div>
                             </div>
-                        </div>
-
-                        <div className='col-md-5 mb-3'>
-                            <div className='illumination-card'>
-                                <div className='illumination-card-image-container'>
-                                <img src={ImageTwo} alt='Card Image' className='illumination-card-image' width="100%" height="100%" />
-                                </div>
-                                <div className='d-flex justify-content-between align-items-center'>
-                                    <div className='illuminaion-card-title' >National History Museum</div>
-                                    <div className='illuminaion-card-text'>Flexible Wall LED</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className='col-md-12 mb-3'>
-                            <div className='illumination-card'>
-                                <div className='illumination-card-image-container'>
-                                <img src={ImageThree} alt='Card Image' className='illumination-card-image' width="100%" height="100%" />
-                                </div>
-                                <div className='d-flex justify-content-between align-items-center'>
-                                    <div className='illuminaion-card-title' >Automotive Innovation Fair</div>
-                                    <div className='illuminaion-card-text'>360 Degree LED Screen</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className='col-md-5 mb-3'>
-                            <div className='illumination-card'>
-                                <div className='illumination-card-image-container'>
-                                <img src={ImageFour} alt='Card Image' className='illumination-card-image' width="100%" height="100%" />
-                                </div>
-                                <div className='d-flex justify-content-between align-items-center'>
-                                    <div className='illuminaion-card-title' >Metropolitan Shopping Mall</div>
-                                    <div className='illuminaion-card-text'>Digital Kiosk</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className='col-md-7 mb-3'>
-                            <div className='illumination-card'>
-                                <div className='illumination-card-image-container'>
-                                <img src={ImageFive} alt='Card Image' className='illumination-card-image' width="100%" height="100%" />
-                                </div>
-                                <div className='d-flex justify-content-between align-items-center'>
-                                    <div className='illuminaion-card-title' >Global Finance Corporation</div>
-                                    <div className='illuminaion-card-text'>Office LED Screens</div>
-                                </div>
+                            <div className='d-flex justify-content-between align-items-center'>
+                                <div className='illuminaion-card-title' > International Tech Expo</div>
+                                <div className='illuminaion-card-text'>Arch LED Display</div>
                             </div>
                         </div>
                     </div>
 
+                    <div className='col-md-5 mb-3'>
+                        <div className='illumination-card'>
+                            <div className='illumination-card-image-container'>
+                                <img src={ImageTwo} alt='Card Image' className='illumination-card-image' width="100%" height="100%" />
+                            </div>
+                            <div className='d-flex justify-content-between align-items-center'>
+                                <div className='illuminaion-card-title' >National History Museum</div>
+                                <div className='illuminaion-card-text'>Flexible Wall LED</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className='col-md-12 mb-3'>
+                        <div className='illumination-card'>
+                            <div className='illumination-card-image-container'>
+                                <img src={ImageThree} alt='Card Image' className='illumination-card-image' width="100%" height="100%" />
+                            </div>
+                            <div className='d-flex justify-content-between align-items-center'>
+                                <div className='illuminaion-card-title' >Automotive Innovation Fair</div>
+                                <div className='illuminaion-card-text'>360 Degree LED Screen</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className='col-md-5 mb-3'>
+                        <div className='illumination-card'>
+                            <div className='illumination-card-image-container'>
+                                <img src={ImageFour} alt='Card Image' className='illumination-card-image' width="100%" height="100%" />
+                            </div>
+                            <div className='d-flex justify-content-between align-items-center'>
+                                <div className='illuminaion-card-title' >Metropolitan Shopping Mall</div>
+                                <div className='illuminaion-card-text'>Digital Kiosk</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className='col-md-7 mb-3'>
+                        <div className='illumination-card'>
+                            <div className='illumination-card-image-container'>
+                                <img src={ImageFive} alt='Card Image' className='illumination-card-image' width="100%" height="100%" />
+                            </div>
+                            <div className='d-flex justify-content-between align-items-center'>
+                                <div className='illuminaion-card-title' >Global Finance Corporation</div>
+                                <div className='illuminaion-card-text'>Office LED Screens</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
+
             </div>
 
-            <FAQ/>
+            <FAQ />
 
-            <div style={{padding:"40px 0"}}>
-                <img src={WannaWorkImage} alt="WannaWorkImage" width="100%"/>
+            <div style={{ padding: "40px 0" }}>
+                <img src={WannaWorkImage} alt="WannaWorkImage" width="100%" />
             </div>
 
-            
+
         </div>
     )
 }

@@ -7,18 +7,48 @@ import { IoArrowForwardCircleOutline } from 'react-icons/io5';
 const Header = () => {
   const location = useLocation(); // Get the current location
   const [activeLink, setActiveLink] = useState(location.pathname);
-  const [navColor, setNavColor] = useState('white'); // Default color for Home page
+  const [navColor, setNavColor] = useState('white'); // Default text color for nav
+  const [navBackgroundColor, setNavBackgroundColor] = useState('transparent'); // Default navbar background color
 
   useEffect(() => {
-    // Update activeLink and navColor based on the current path
+    // Update activeLink based on current path
     setActiveLink(location.pathname);
 
-    // Set text color based on the page
+    // Update nav text color and navbar background color based on the page
     if (location.pathname === '/') {
-      setNavColor('white'); // Home page
+      setNavColor('var(--white-color)');
+      setNavBackgroundColor('var(--black-color)'); // Navbar background for Home page
+      document.body.style.backgroundColor = 'var(--black-color)'; // Background color for Home page
+    } else if (location.pathname === '/aboutus') {
+      setNavColor('var(--black-color)');
+      setNavBackgroundColor('var(--white-color)'); // Navbar background for About Us page
+      document.body.style.backgroundColor = 'var(--white-color)'; // Background color for About Us page
+    } else if (location.pathname === '/products') {
+      setNavColor('var(--white-color)');
+      setNavBackgroundColor('var(--black-color)'); // Navbar background for Products page
+      document.body.style.backgroundColor = 'var(--black-color)'; // Background color for Products page
+    } else if (location.pathname === '/projects') {
+      setNavColor('var(--white-color)');
+      setNavBackgroundColor('var(--black-color)'); // Navbar background for Projects page
+      document.body.style.backgroundColor = 'var(--black-color)'; // Background color for Projects page
+    } else if (location.pathname === '/services') {
+      setNavColor('var(--black-color)');
+      setNavBackgroundColor('var(--white-color)'); // Navbar background for Services page
+      document.body.style.backgroundColor = 'var(--white-color)'; // Background color for Services page
+    } else if (location.pathname === '/faq') {
+      setNavColor('var(--white-color)');
+      setNavBackgroundColor('var(--black-color)'); // Navbar background for Projects page
+      document.body.style.backgroundColor = 'var(--black-color)'; // Background color for Projects page
     } else {
-      setNavColor('black'); // Other pages
+      setNavColor('var(--black-color)');
+      setNavBackgroundColor('var(--white-color)'); // Default navbar background
+      document.body.style.backgroundColor = 'var(--white-color)'; // Default background for unknown pages
     }
+
+    // Cleanup: Reset the background color when the component unmounts or when the page changes
+    return () => {
+      document.body.style.backgroundColor = ''; // Reset to default when navigating away
+    };
   }, [location]);
 
   return (
@@ -26,13 +56,15 @@ const Header = () => {
       bg="transparent"
       className="px-5 py-4 header"
       expand="lg"
-      style={{ color: navColor }} // Apply dynamic color
+      style={{ color: navColor, backgroundColor: navBackgroundColor }} // Apply dynamic background color to the navbar
     >
       {/* Logo on the left */}
       <Navbar.Brand
         as={Link}
         to="/"
-        className="header-title" style={{ color: navColor }}>
+        className="header-title"
+        style={{ color: navColor }}
+      >
         <img src={logo} alt="Pixel World" />
         <b>Pixel World</b>
       </Navbar.Brand>
@@ -40,7 +72,8 @@ const Header = () => {
       {/* Toggler for mobile view */}
       <Navbar.Toggle
         style={{ color: navColor }}
-        aria-controls="navbar-nav" />
+        aria-controls="navbar-nav"
+      />
 
       <Navbar.Collapse id="navbar-nav">
         {/* Center navigation links */}
@@ -103,7 +136,6 @@ const Header = () => {
           Get in Touch <IoArrowForwardCircleOutline size={20} />
         </button>
       </Navbar.Collapse>
-
     </Navbar>
   );
 };

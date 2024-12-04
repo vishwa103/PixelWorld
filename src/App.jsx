@@ -8,6 +8,9 @@ import { HashRouter, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import AboutUs from './pages/AboutUs';
 import Footer from './components/Footer';
+import Services from './pages/Services';
+import Projects from './pages/Projects';
+import FAQ from './components/FAQ';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -20,6 +23,9 @@ function App() {
         <Routes >
           <Route path="/" element={<Home />} />
           <Route path="/aboutus" element={<AboutUs />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/faq" element={<FAQ />} />
         </Routes>
         </div>
         <Footer/>
