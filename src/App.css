@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-@import url('https://api.fontshare.com/v2/css?f[]=clash-display@200,400,500,600,700&display=swap');
+/* @import url('https://api.fontshare.com/v2/css?f[]=clash-display@200,400,500,600,700&display=swap'); */
 
 /* src/assets/fonts/fonts.css */
 @font-face {
@@ -22,27 +22,58 @@
   --gray-color: #E3E3E3;
 }
 
+
+
 .global {
   position: relative;
-  top: -93px;
+  overflow-x: hidden;
+  
+}
+
+.loader-container.fade-out {
+  animation: fadeOut 1s ease forwards;
+}
+
+.loader-text {
+  opacity: 0;
+  /* Start fully transparent */
+  animation: smoothFadeIn 3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes smoothFadeIn {
+  0% {
+    opacity: 0;
+    /* Fully transparent */
+  }
+
+  100% {
+    opacity: 1;
+    /* Fully visible */
+  }
+}
+
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
 }
 
 .header {
   position: relative;
-  /* Use relative positioning */
   z-index: 1000;
-  /* Ensure it's above other elements */
   width: 100%;
-  /* Full width */
+  backdrop-filter: blur(15px);
+  /* Dark color with transparency */
+  padding: 10px 30px;
 }
-
 
 .header-title {
   font-weight: 500;
   display: flex;
   gap: 4px;
   font-size: 20px;
-
 }
 
 .nav-link {
@@ -91,33 +122,35 @@
   color: var(--black-color);
 }
 
-
-
-
-
-.hero-section {
+/* .hero-section {
   padding: 10px;
-}
-
+} */
 .hero-image-container {
   position: relative;
-  object-fit: cover;
-  border-radius: 24px;
-  height: 100vh;
-  /* Full screen height */
+  height: 90vh;
   width: 100%;
-  /* Full screen width */
   overflow: hidden;
-  /* Ensures no content overflows the container */
 }
 
 .hero-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  /* Ensures the image maintains its aspect ratio and covers the container */
-  border-radius: 24px;
 }
+
+.hero-image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Adjust opacity for dimming effect */
+  z-index: 1;
+  pointer-events: none;
+  /* Ensures overlay doesn’t block interactions */
+}
+
 
 .hero-content {
   position: absolute;
@@ -147,11 +180,14 @@
 .hero-title {
   position: relative;
   font-family: 'Clash Display', sans-serif;
-  font-size: 240px;
+  font-size: 100px;
+  top: 100%;
+  /* transform: translate(-50%, -50%); */
   /* Scales with viewport width */
   color: var(--white-color);
   font-weight: 400;
   margin: 0;
+  /* line-height: 0; */
   /* Removes default margin */
   z-index: 2;
   /* Keeps title above the content */
@@ -171,7 +207,7 @@
 
 .hero-subcontent {
   padding: 10px;
-  backdrop-filter: blur(15px);
+  backdrop-filter: blur(150px);
   background: #FFFFFF1A;
   color: var(--white-color);
   width: 100%;
@@ -206,9 +242,9 @@
 .explore {
   background: var(--white-color);
   min-height: 200px;
-  padding: 100px 20px;
+  padding: 50px 20px;
   border-radius: 32px;
-  margin: 40px 0;
+  margin: 20px 0;
 }
 
 
@@ -243,6 +279,7 @@
 .innovateDisplay-card-description {
   font-size: 16px;
   font-weight: 400;
+  text-align: justify;
 }
 
 .innovateDisplay-image {
@@ -252,6 +289,8 @@
 .occasionReady {
   padding: 10px;
   margin: 40px 0;
+  background: var(--dark-gray-color);
+  border-radius: 20px;
 }
 
 .occasionReady-services {
@@ -305,6 +344,22 @@
   color: var(--black-color);
 }
 
+.explore-image-container {
+  position: relative;
+  overflow: hidden;
+  height: 550px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.explore-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 
 .explore-subtitle {
   font-weight: 500;
@@ -321,8 +376,27 @@
   border: 1px solid var(--black-color);
   border-radius: 60px;
   padding: 10px 30px;
-  font-size: 16px;
+  font-size: 14px;
+  display: flex;
   color: var(--black-color);
+  margin: 10px 10px 0 0;
+}
+
+.nav-toggle{
+  background-color: #ffffff;
+}
+
+.explore-button-two {
+  background: var(--black-color);
+  border: 1px solid var(--black-color);
+  border-radius: 60px;
+  padding: 10px 10px 10px 15px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  color: var(--white-color);
   margin: 10px 10px 0 0;
 }
 
@@ -396,6 +470,18 @@
   text-align: center;
 }
 
+.logo-container {
+  flex: 1 1 calc(20% - 10px);
+  /* Allows 5 items in a row with space between */
+  max-width: calc(15% - 10px);
+  /* Ensures items don't exceed 5 per row */
+  /* Spacing between items */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 100px 20px;
+}
+
 .illumination-logo-container {
   flex: 1 1 calc(20% - 10px);
   /* Allows 5 items in a row with space between */
@@ -444,12 +530,12 @@
 
 .illuminaion-card-title {
   font-weight: 500;
-  font-size: 24px;
+  font-size: 20px;
   color: var(--white-color);
 }
 
 .illuminaion-card-text {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 400;
   color: var(--white-color);
 }
@@ -564,7 +650,15 @@
   color: var(--white-color);
 }
 
-.footer-image-container {
+/* .footer-image-container {
+  width: 100%;
+  position: relative;
+  object-fit: cover;
+  margin: 20px 0;
+  border-radius: 12px;
+} */
+
+.footer-map {
   width: 100%;
   position: relative;
   object-fit: cover;
@@ -572,12 +666,12 @@
   border-radius: 12px;
 }
 
-.footer-image {
+/* .footer-image {
   border-radius: 12px;
   object-fit: cover;
   width: 100%;
   min-height: 250px;
-}
+} */
 
 .footer-logo {
   color: var(--white-color);
@@ -616,7 +710,7 @@
 }
 
 .services {
-  margin: 80px 0;
+  margin: 20px 0;
   padding: 0 20px;
 }
 
@@ -651,9 +745,12 @@
   text-underline-position: from-font;
   text-decoration-skip-ink: none;
   background: linear-gradient(180.2deg, #ECECEC 12.42%, #E9ECFF 99.83%);
-  -webkit-background-clip: text; /* Chrome, Safari */
-  background-clip: text; /* Standard browsers */
-  color: transparent; /* Make text color transparent so the gradient shows */
+  -webkit-background-clip: text;
+  /* Chrome, Safari */
+  background-clip: text;
+  /* Standard browsers */
+  color: transparent;
+  /* Make text color transparent so the gradient shows */
 }
 
 .button-two {
@@ -669,47 +766,84 @@
 
 }
 
-.services-subtitle{
+.services-subtitle {
   font-size: 84px;
   font-weight: 500;
   margin-bottom: 30px;
 }
 
-.service-item{
+.service-item {
   background: linear-gradient(180deg, #F4F4F4 0%, #EAEAEA 100%);
   border-radius: 8px;
-  padding: 20px 30px;
-  font-size: 18px;
+  padding: 10px;
+  height: 440px;
+  font-size: 16px;
   font-weight: 500;
-  margin: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 10px 0;
+  transition: all 0.8s;
+
 }
 
-.projects{
-  margin: 80px 0;
+
+
+.service-image-container {
+  width: 100%;
+  height: 400px;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: all 0.8s;
+}
+
+
+.service-item:hover {
+  font-size: 18px;
+  transition: all 0.8s;
+}
+
+.service-item:hover .service-image-container {
+  height: 350px;
+  transition: all 0.8s;
+
+}
+
+.service-image {
+  border-radius: 8px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+
+.projects {
+  margin: 20px 0;
   padding: 0 20px;
 }
 
-.faq{
-  margin: 80px 0;
+.faq {
+  margin: 20px 0;
   padding: 0 20px;
 }
 
 
-.projects-title{
+.projects-title {
   font-size: 48px;
   font-weight: 500;
   text-align: center;
   color: var(--white-color);
 }
 
-.projects-description{
+.projects-description {
   font-size: 20px;
   font-weight: 400;
   text-align: center;
   color: var(--white-color);
 }
 
-.projects-bg-title{
+.projects-bg-title {
   font-family: Poppins;
   font-size: 150px;
   font-weight: 500;
@@ -719,35 +853,196 @@
   text-underline-position: from-font;
   text-decoration-skip-ink: none;
   background: linear-gradient(180deg, #FFFFFF 0%, #2E2E2E 100%);
-  -webkit-background-clip: text; /* Chrome, Safari */
-  background-clip: text; /* Standard browsers */
-  color: transparent; /* Make text color transparent so the gradient shows */
+  -webkit-background-clip: text;
+  /* Chrome, Safari */
+  background-clip: text;
+  /* Standard browsers */
+  color: transparent;
+  /* Make text color transparent so the gradient shows */
 }
 
-.project-explore{
+.project-explore {
 
   margin-top: -80px;
 }
 
-.bestsellers-subtext{
+.bestsellers-subtext {
   font-size: 18px;
   font-weight: 500;
   color: var(--white-color);
 }
 
-.bestsellers-title{
+.bestsellers-title {
   font-size: 124px;
   font-weight: 500;
   color: var(--white-color);
 }
+
+.product {
+  margin: 20px 0;
+  padding: 0 60px;
+}
+
+.product-image-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+}
+
+.product-image {
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.product-title {
+  font-size: 40px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  /* width: 75%; */
+  /* text-align: center; */
+}
+
+.product-description{
+  font-weight: 500;
+  font-size: 20px;
+  color: gray;
+}
+
+.blog-title {
+  font-size: 40px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  /* width: 75%; */
+  /* text-align: center; */
+}
+
+.blog-description{
+  font-weight: 500;
+  font-size: 20px;
+  color: gray;
+}
+
+.blog-image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Adjust opacity for dimming effect */
+  z-index: 1;
+  pointer-events: none;
+  /* Ensures overlay doesn’t block interactions */
+}
+
+.blog-content{
+
+  position: absolute;
+  top: 0;
+  /* Align content to the top */
+  left: 0;
+  /* Align content to the left */
+  right: 0;
+  /* Stretch content to the right */
+  bottom: 0;
+  /* Stretch content to the bottom */
+  display: flex;
+  /* Enables flexible alignment */
+  flex-direction: column;
+  /* Stack content vertically */
+  justify-content: space-between;
+ 
+  /* Center content horizontally */
+  z-index: 1;
+  /* Ensures content is above the image */
+  padding: 20px;
+  /* Optional padding for spacing */
+  text-align: center;
+  /* Center text alignment */
+}
+
+.project-description {
+  font-size: 18px;
+  font-weight: 400;
+  text-align: center;
+}
+
+
+.product-content {
+  margin: 100px 0;
+}
+
+.product-button {
+  background: var(--primary-color);
+  color: var(--white-color);
+  padding: 12px 20px;
+  border-radius: 50px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.product-cards{
+  margin: 80px 0;
+}
+
+.product-card{
+  padding: 20px;
+  min-height: 255px;
+  background: linear-gradient(180deg, #F7F4F4 0%, #ECECEC 100%);
+
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+ 
+}
+
+.blog-title{
+  font-size: 40px;
+  font-weight: 500;
+  text-align: left;
+  color: var(--white-color);
+
+}
+
+
+.blog-text{
+  font-size: 18px;
+  font-weight: 300;
+  text-align: left;
+  color: var(--white-color);
+}
+
+.blog-button{
+    background: #f3f3f3;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+}
 /* Responsive adjustments */
 @media (max-width: 1330px) {
 
-  .hero-title,
+  .bestsellers-title {
+    font-size: 90px;
+  }
+
+
   .about-title {
     margin-top: 50px;
     font-size: 140px;
     /* Slightly smaller for mobile screens */
+  }
+
+  .hero-title {
+    font-size: 140px;
   }
 
   .services-title {
@@ -756,7 +1051,7 @@
     /* Slightly smaller for mobile screens */
   }
 
- 
+
   .hero-description {
     font-size: 40px;
     margin-top: -45px;
@@ -774,12 +1069,14 @@
     font-size: 72px;
   }
 
-  .services-bg-title, .projects-bg-title {
+  .services-bg-title,
+  .projects-bg-title {
     font-size: 60px;
-  line-height: 70px;
+    line-height: 70px;
   }
 
-  .occasionReady-services, .project-explore {
+  .occasionReady-services,
+  .project-explore {
     margin: -30px 0 40px 0;
   }
 
@@ -788,9 +1085,17 @@
 
 @media (max-width: 800px) {
 
-  .hero-title,
+  .bestsellers-title {
+    font-size: 48px;
+  }
+
   .about-title {
     margin-top: 50px;
+    font-size: 80px;
+    /* Slightly smaller for mobile screens */
+  }
+
+  .hero-title {
     font-size: 80px;
     /* Slightly smaller for mobile screens */
   }
@@ -825,6 +1130,7 @@
 
   .hero-text {
     width: 100%;
+    font-size: 12px;
   }
 
   .innovateDisplay-image {
@@ -859,6 +1165,10 @@
     /* Maintain readability */
   }
 
+  .product-title{
+    font-size: 24px;
+  }
+
 
   .services-title {
     font-size: 28px;
@@ -871,6 +1181,10 @@
   }
 
   .illumination-title {
+    font-size: 32px;
+  }
+
+  .explore-subtitle {
     font-size: 32px;
   }
 
@@ -890,7 +1204,7 @@
 
   .services-bg-title {
     font-size: 40px;
-  line-height: 55px;
+    line-height: 55px;
   }
 
   .occasionReady-services {

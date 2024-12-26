@@ -1,176 +1,147 @@
-import React from 'react'
-import innovateDisplayImage from '../assets/InnovateDisplayImage.png'
+import React from 'react';
+import innovateDisplayImage from '../assets/InnovateDisplayImage.png';
+import IlliminationImage from '../assets/IlliminationImage.png';
 
-import IlliminationImage from '../assets/IlliminationImage.png'
+import ClientLogo1 from '../assets/ClientLogoOne.png';
+import ClientLogo2 from '../assets/ClientLogoTwo.png';
+import ClientLogo3 from '../assets/ClientLogoThree.png';
+import ClientLogo4 from '../assets/ClientLogoFour.png';
+import ClientLogo5 from '../assets/ClientLogoFive.png';
+import ClientLogo6 from '../assets/ClientLogoSix.png';
+import ClientLogo7 from '../assets/ClientLogoSeven.png';
+import ClientLogo8 from '../assets/ClientLogoEight.png';
+import ClientLogo9 from '../assets/ClientLogoNine.png';
+import { Helmet } from 'react-helmet';
 
-import IlliminationLogoOneImage from '../assets/IlliminationLogoOne.png'
-import IlliminationLogoTwoImage from '../assets/IlliminationLogoTwo.png'
-import IlliminationLogoThreeImage from '../assets/IlliminationLogoThree.png'
-import IlliminationLogoFourImage from '../assets/IlliminationLogoFour.png'
-import IlliminationLogoFiveImage from '../assets/IlliminationLogoFive.png'
-import IlliminationLogoSixImage from '../assets/IlliminationLogoSix.png'
-import IlliminationLogoSevenImage from '../assets/IlliminationLogoSeven.png'
-import IlliminationLogoEightImage from '../assets/IlliminationLogoEight.png'
-import IlliminationLogoNineImage from '../assets/IlliminationLogoNine.png'
-
-import logoWhite from '../assets/logoWhite.png'
-import { FiArrowRightCircle } from 'react-icons/fi'
-
+// import { FiArrowRightCircle } from 'react-icons/fi';
 
 const AboutUs = () => {
   return (
     <>
-      <div className='innovateDisplay'>
+       <Helmet>
+        <title>About Us | Innovative LED Display Solutions</title>
+        <meta name="description" content="Discover our mission, vision, and core values as we redefine visual storytelling with cutting-edge LED display solutions worldwide." />
+        <meta name="keywords" content="LED display solutions, visual storytelling, innovative technology, global illumination, happy clients" />
+        <meta name="author" content="Pixel World" />
+      <link rel="canonical" href="https://pixelworld.ae/aboutus" />
+
+      </Helmet>
+      <section className='innovateDisplay' id="aboutus">
         <div className='d-flex justify-content-center'>
-          <img src={innovateDisplayImage} alt='Innovate Display' className='innovateDisplay-image' />
+          <img src={innovateDisplayImage} alt='Innovative LED Display Solutions' className='innovateDisplay-image' height="100%" width="100%" />
         </div>
         <div className='mt-5'>
-          <div className='innovateDisplay-title'>
-            With innovation at the heart of<br /> everything we do;
-          </div>
-          <div className='innovateDisplay-description'>
-            Driven by innovation, we’re redefining visual storytelling with advanced LED solutions.
-          </div>
+          <h1 className='innovateDisplay-title'>With Innovation at the Heart of<br/> Everything We Do</h1>
+          <p className='innovateDisplay-description'>
+            Driven by cutting-edge technology, we redefine visual storytelling with advanced LED display solutions.
+          </p>
           <div className='row'>
             <div className='col-lg-4 col-md-6 mb-3'>
-              <div className='innovateDisplay-card rounded '>
-                <div className='innovateDisplay-card-title'>Our Mission</div>
-                <div className='innovateDisplay-card-description'>To provide innovative LED solutions that captivate audiences and transform spaces worldwide</div>
+              <div className='innovateDisplay-card rounded'>
+                <h2 className='innovateDisplay-card-title'>Our Mission</h2>
+                <p className='innovateDisplay-card-description'>
+                  To provide innovative LED solutions that captivate audiences and transform spaces worldwide.
+                </p>
               </div>
             </div>
 
             <div className='col-lg-4 col-md-6 mb-3'>
-              <div className='illimination-count-card '>
-                <div className='illimination-count'>
-                  500+
-                </div>
-                <div className='illumination-count-text'>
-                  Projects Completed
-                </div>
+              <div className='illimination-count-card'>
+                <h2 className='illimination-count'>500+</h2>
+                <p className='illumination-count-text'>Projects Completed</p>
               </div>
             </div>
 
             <div className='col-lg-4 col-md-6 mb-3'>
-              <div className='innovateDisplay-card rounded '>
-                <div className='innovateDisplay-card-title'>Core Values</div>
-                <div className='innovateDisplay-card-description'>
-                  Innovation, Quality, Sustainability, and Client Focus
-                </div>
+              <div className='innovateDisplay-card rounded'>
+                <h2 className='innovateDisplay-card-title'>Core Values</h2>
+                <p className='innovateDisplay-card-description'>
+                  Innovation, Quality, Sustainability, and Client Focus.
+                </p>
               </div>
             </div>
 
             <div className='col-lg-4 col-md-6 mb-3'>
-              <div className='illimination-count-card '>
-                <div className='illimination-count'>
-                  7K+
-                </div>
-                <div className='illumination-count-text'>
-                  Of Happy Clients and Businesses
-                </div>
-              </div>
-            </div>
-            <div className='col-lg-4 col-md-6 mb-3'>
-              <div className='innovateDisplay-card rounded '>
-                <div className='innovateDisplay-card-title'>Our Vision</div>
-                <div className='innovateDisplay-card-description'>
-                  Empowering brands to communicate with brilliance and clarity
-                </div>
+              <div className='illimination-count-card'>
+                <h2 className='illimination-count'>7K+</h2>
+                <p className='illumination-count-text'>Happy Clients and Businesses</p>
               </div>
             </div>
 
             <div className='col-lg-4 col-md-6 mb-3'>
-              <div className='illimination-count-card '>
-                <div className='illimination-count'>
-                  70+
-                </div>
-                <div className='illumination-count-text'>
-                  Cities Covered Worldwide
-                </div>
+              <div className='innovateDisplay-card rounded'>
+                <h2 className='innovateDisplay-card-title'>Our Vision</h2>
+                <p className='innovateDisplay-card-description'>
+                  Empowering brands to communicate with brilliance and clarity.
+                </p>
               </div>
             </div>
 
-
-
-
+            <div className='col-lg-4 col-md-6 mb-3'>
+              <div className='illimination-count-card'>
+                <h2 className='illimination-count'>70+</h2>
+                <p className='illumination-count-text'>Cities Covered Worldwide</p>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-      <div className='illumination-about'>
-        <h1 className='illumination-about-title'>Bringing Brilliance to<br /> Every Corner of the Globe</h1>
-        <p className='illumination-about-description' >From local events to global spectacles, our LED solutions have illuminated stages, streets, and summits worldwide.</p>
+      </section>
 
-        <img src={IlliminationImage} alt='Illimation' width="100%" className="my-5" />
+      <section className='illumination-about'>
+        <h2 className='illumination-about-title'>Bringing Brilliance to Every Corner of the Globe</h2>
+        <p className='illumination-about-description'>
+          From local events to global spectacles, our LED solutions illuminate stages, streets, and summits worldwide.
+        </p>
+
+        <img src={IlliminationImage} alt='Global LED Illumination Projects' width="100%" height="100%"  className="my-5" />
 
         <div className='my-5'>
-          <div className='illimination-about-subtitle'>Trusted By</div>
+          <h2 className='illimination-about-subtitle'>Trusted By Industry Leaders</h2>
 
           <div className='d-flex flex-wrap justify-content-center mt-5 align-items-center'>
-            <div className='logo-container m-4'>
-              <img src={IlliminationLogoOneImage} alt='Client Logo' />
-            </div>
-            <div className='logo-container m-4'>
-              <img src={IlliminationLogoTwoImage} alt='Client Logo' />
-            </div>
-            <div className='logo-container m-4'>
-              <img src={IlliminationLogoThreeImage} alt='Client Logo' />
-            </div>
-            <div className='logo-container m-4'>
-              <img src={IlliminationLogoFourImage} alt='Client Logo' />
-            </div>
-            <div className='logo-container m-4'>
-              <img src={IlliminationLogoFiveImage} alt='Client Logo' />
-            </div>
-            <div className='logo-container m-4'>
-              <img src={IlliminationLogoSixImage} alt='Client Logo' />
-            </div>
-            <div className='logo-container m-4'>
-              <img src={IlliminationLogoSevenImage} alt='Client Logo' />
-            </div>
-            <div className='logo-container m-4'>
-              <img src={IlliminationLogoEightImage} alt='Client Logo' />
-            </div>
-            <div className='logo-container m-4'>
-              <img src={IlliminationLogoNineImage} alt='Client Logo' />
-            </div>
-
+            {[ClientLogo1, ClientLogo2, ClientLogo3, ClientLogo4, ClientLogo5, ClientLogo6, ClientLogo7, ClientLogo8, ClientLogo9].map(
+              (logo, index) => (
+                <div key={index} className='logo-container m-4'>
+                  <img src={logo} alt={`Client Logo ${index + 1}`} width="100%" height="100%"  />
+                </div>
+              )
+            )}
           </div>
         </div>
 
         <div className='row my-5 p-3'>
-          <div className='col-md-9 my-5' >
-            <h1 className='illumination-title text-start'>See Our Displays in Action</h1>
-            <p className='illumination-about-description text-start'>Take a look at our past projects and see how we’ve helped clients bring their events to life. From corporate meetings to large-scale festivals, our LED solutions have made a difference</p>
+          <div className='col-md-9 my-5'>
+            <h2 className='illumination-about-title text-start'>See Our Displays in Action</h2>
+            <p className='illumination-about-description text-start'>
+              Explore our portfolio of projects, from corporate meetings to large-scale festivals, and see how our LED solutions make events unforgettable.
+            </p>
           </div>
           <div className='col-md-3 my-5'>
-            <div className='illimination-count-card '>
-              <div className='illimination-count'>
-                7K+
-              </div>
-              <div className='illumination-count-text'>
-                Of Happy Clients and Businesses
-              </div>
+            <div className='illimination-count-card'>
+              <h2 className='illimination-count'>7K+</h2>
+              <p className='illumination-count-text'>Happy Clients and Businesses</p>
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
-      <div className='about-partner'>
-        <h1 className='about-title'>Partner with Us</h1>
+      {/* <section className='about-partner'>
+        <h2 className='about-title'>Partner with Us</h2>
         <div className='about-discover'>
           <div className='row'>
             <div className='col-md-3 mb-3'>
-              <img src={logoWhite} alt='logoWhite' width="100%" height="100%" />
+              <img src={logoWhite} alt='Logo' width="100%" height="100%" />
             </div>
             <div className='col-md-9 mb-3'>
               <div className='about-discover-text'>
-              Discover Our Services <FiArrowRightCircle />
+                Discover Our Services <FiArrowRightCircle />
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </section> */}
     </>
-  )
-}
+  );
+};
 
-export default AboutUs
+export default AboutUs;

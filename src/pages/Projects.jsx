@@ -1,127 +1,147 @@
-import React from 'react'
-import logoWhite from '../assets/logoWhite.png'
-import { FiArrowRightCircle } from 'react-icons/fi'
-import Explore from '../components/Explore'
-import FAQ from '../components/FAQ'
-
-
-import ImageOne from '../assets/ImageOne.png'
-import ImageTwo from '../assets/ImageTwo.png'
-import ImageThree from '../assets/ImageThree.png'
-import ImageFour from '../assets/ImageFour.png'
-import ImageFive from '../assets/ImageFive.png'
-import { BsArrowRightCircleFill } from 'react-icons/bs'
+import React from 'react';
+import ImageOne from '../assets/ImageOne.jpg';
+import ImageTwo from '../assets/ImageTwo.png';
+import ImageThree from '../assets/ImageThree.jpg';
+import ImageFour from '../assets/ImageFour.png';
+import ImageFive from '../assets/ImageFive.jpg';
+// import { BsArrowRightCircleFill } from 'react-icons/bs';
+import { Helmet } from 'react-helmet';
 
 const Projects = () => {
-    return (
-        <div className='projects'>
+  return (
+    <><Helmet>
+    <title>Our LED Display Projects | Innovative Solutions for Every Need</title>
+    <meta name="description" content="Explore our portfolio of LED display projects ranging from corporate setups to large-scale events and outdoor installations." />
+    <meta name="keywords" content="LED display projects, outdoor LED screens, indoor LED screens, corporate LED displays, event LED screens, Dubai LED displays" />
+    <meta name="author" content="Pixel World" />
+    <link rel="canonical" href="https://pixelworld.ae/projects" />
 
-            <div className='pt-5 d-flex flex-column align-items-center justify-content-center '>
-                <h1 className='projects-title'>Innovative LED Displays for Every Need</h1>
-                <p className='projects-description'>
-                    Explore a wide range of high-performance LED solutions tailored <br /> for events, advertising, corporate setups, and more.
-                </p>
-                <button className='button-two' >Explore Our Products <FiArrowRightCircle /></button>
-            </div>
+  </Helmet>
+    <section className="projects" id="projects">
+      <div className="pt-5 d-flex flex-column align-items-center justify-content-center text-center">
+        <h1 className="projects-title">Innovative LED Displays for Every Need</h1>
+        <p className="projects-description">
+          Explore a wide range of high-performance LED solutions tailored for events, advertising, corporate setups, and more.
+        </p>
+      </div>
 
+      <div className="my-5">
+        <h2 className="projects-bg-title">Discover Our Product Range</h2>
 
-            <div className='my-5'>
-                <h1 className='projects-bg-title'>Discover Our Product Range</h1>
-                <div className='project-explore'>
-                    <Explore />
+        <div className="project-section">
+          <header className="d-flex justify-content-between align-items-end">
+            {/* <h3 className="bestsellers-title">Our Projects</h3> */}
+            {/* <span className="bestsellers-subtext">Find the Right Fit</span> */}
+          </header>
+
+          <hr className="text-white" />
+
+          <div className="row my-3 p-3">
+            {/* Project 1 */}
+            <article className="col-md-7 mb-3">
+              <div className="illumination-card">
+                <figure className="illumination-card-image-container">
+                  <img
+                    src={ImageOne}
+                    alt="Quttainah Specialized Hospital featuring an outdoor LED screen with vibrant visuals."
+                    className="illumination-card-image"
+                    width="100%"
+                    height="100%"
+                    loading="lazy"
+                  />
+                </figure>
+                <div className="d-flex justify-content-between align-items-center">
+                  <h4 className="illuminaion-card-title">Quttainah Specialized Hospital</h4>
+                  <p className="illuminaion-card-text">Outdoor LED Screen</p>
                 </div>
-            </div>
+              </div>
+            </article>
 
-           
-            <div className='py-5' >
-                <div className='d-flex justify-content-between align-items-end '>
-                    <h1 className='bestsellers-title'>Our Bestsellers</h1>
-                    <span className='bestsellers-subtext'>Find the Right Fit</span>
+            {/* Project 2 */}
+            <article className="col-md-5 mb-3">
+              <div className="illumination-card">
+                <figure className="illumination-card-image-container">
+                  <img
+                    src={ImageTwo}
+                    alt="Ministry of Finance in Dubai showcasing an indoor curved LED screen."
+                    className="illumination-card-image"
+                    width="100%"
+                    height="100%"
+                    loading="lazy"
+                  />
+                </figure>
+                <div className="d-flex justify-content-between align-items-center">
+                  <h4 className="illuminaion-card-title">Ministry of Finance - Dubai</h4>
+                  <p className="illuminaion-card-text">Indoor Curve LED Screen</p>
                 </div>
+              </div>
+            </article>
 
-                <hr className='text-white'/>
-
-                <div className='row my-3 p-3'>
-                    <div className='col-md-7 mb-3'>
-                        <div className='illumination-card'>
-                            <div className='illumination-card-image-container'>
-                                <img src={ImageOne} alt='Card Image' className='illumination-card-image' width="100%" height="100%" />
-                            </div>
-                            <div className='d-flex justify-content-between align-items-center'>
-                                <div className='illuminaion-card-title' > International Tech Expo</div>
-                                <div className='illuminaion-card-text'><BsArrowRightCircleFill size={24}/></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className='col-md-5 mb-3'>
-                        <div className='illumination-card'>
-                            <div className='illumination-card-image-container'>
-                                <img src={ImageTwo} alt='Card Image' className='illumination-card-image' width="100%" height="100%" />
-                            </div>
-                            <div className='d-flex justify-content-between align-items-center'>
-                                <div className='illuminaion-card-title' >National History Museum</div>
-                                <div className='illuminaion-card-text'><BsArrowRightCircleFill size={24}/></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className='col-md-12 mb-3'>
-                        <div className='illumination-card'>
-                            <div className='illumination-card-image-container'>
-                                <img src={ImageThree} alt='Card Image' className='illumination-card-image' width="100%" height="100%" />
-                            </div>
-                            <div className='d-flex justify-content-between align-items-center'>
-                                <div className='illuminaion-card-title' >Automotive Innovation Fair</div>
-                                <div className='illuminaion-card-text'><BsArrowRightCircleFill size={24}/></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className='col-md-5 mb-3'>
-                        <div className='illumination-card'>
-                            <div className='illumination-card-image-container'>
-                                <img src={ImageFour} alt='Card Image' className='illumination-card-image' width="100%" height="100%" />
-                            </div>
-                            <div className='d-flex justify-content-between align-items-center'>
-                                <div className='illuminaion-card-title' >Metropolitan Shopping Mall</div>
-                                <div className='illuminaion-card-text'><BsArrowRightCircleFill size={24}/></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className='col-md-7 mb-3'>
-                        <div className='illumination-card'>
-                            <div className='illumination-card-image-container'>
-                                <img src={ImageFive} alt='Card Image' className='illumination-card-image' width="100%" height="100%" />
-                            </div>
-                            <div className='d-flex justify-content-between align-items-center'>
-                                <div className='illuminaion-card-title' >Global Finance Corporation</div>
-                                <div className='illuminaion-card-text'><BsArrowRightCircleFill size={24}/></div>
-                            </div>
-                        </div>
-                    </div>
+            {/* Project 3 */}
+            <article className="col-md-12 mb-3">
+              <div className="illumination-card">
+                <figure className="illumination-card-image-container">
+                  <img
+                    src={ImageThree}
+                    alt="VIP Design Luxury Automobile in Dubai showcasing a sleek indoor LED screen."
+                    className="illumination-card-image"
+                    width="100%"
+                    height="100%"
+                    loading="lazy"
+                  />
+                </figure>
+                <div className="d-flex justify-content-between align-items-center">
+                  <h4 className="illuminaion-card-title">VIP Design Luxury Automobile - Dubai</h4>
+                  <p className="illuminaion-card-text">Indoor LED Screen</p>
                 </div>
-            </div>
+              </div>
+            </article>
 
-            <FAQ />
-            <div className='about-partner'>
-                <h1 className='about-title text-white'>Partner with Us</h1>
-                <div className='about-discover'>
-                    <div className='row'>
-                        <div className='col-md-3 mb-3'>
-                            <img src={logoWhite} alt='logoWhite' width="100%" height="100%" />
-                        </div>
-                        <div className='col-md-9 mb-3'>
-                            <div className='about-discover-text'>
-                                Get In Touch <FiArrowRightCircle />
-                            </div>
-                        </div>
-                    </div>
+            {/* Project 4 */}
+            <article className="col-md-5 mb-3">
+              <div className="illumination-card">
+                <figure className="illumination-card-image-container">
+                  <img
+                    src={ImageFour}
+                    alt="NARA Lounge & Bar - Cluster A featuring a stylish indoor LED screen."
+                    className="illumination-card-image"
+                    width="100%"
+                    height="100%"
+                    loading="lazy"
+                  />
+                </figure>
+                <div className="d-flex justify-content-between align-items-center">
+                  <h4 className="illuminaion-card-title">NARA Lounge & Bar - Cluster A</h4>
+                  <p className="illuminaion-card-text">Indoor LED Screen</p>
                 </div>
-            </div>
+              </div>
+            </article>
+
+            {/* Project 5 */}
+            <article className="col-md-7 mb-3">
+              <div className="illumination-card">
+                <figure className="illumination-card-image-container">
+                  <img
+                    src={ImageFive}
+                    alt="Daylone Marine yacht featuring an outdoor LED screen with a durable cabinet design."
+                    className="illumination-card-image"
+                    width="100%"
+                    height="100%"
+                    loading="lazy"
+                  />
+                </figure>
+                <div className="d-flex justify-content-between align-items-center">
+                  <h4 className="illuminaion-card-title">Daylone Marine (Yacht)</h4>
+                  <p className="illuminaion-card-text">Outdoor LED Screen with Cabinet</p>
+                </div>
+              </div>
+            </article>
+          </div>
         </div>
-    )
-}
+      </div>
+    </section>
+    </>
+  );
+};
 
-export default Projects
+export default Projects;

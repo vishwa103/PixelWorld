@@ -1,278 +1,178 @@
-import React from 'react'
-import { CiDiscount1 } from 'react-icons/ci'
-import { HiOutlineGlobeAlt } from 'react-icons/hi2'
-import { IoExpand, IoPeopleOutline, IoSettingsOutline } from 'react-icons/io5'
-import { LuClock3 } from 'react-icons/lu'
-import { VscTools } from 'react-icons/vsc'
-import logoWhite from '../assets/logoWhite.png'
-
-import { FiArrowRightCircle } from 'react-icons/fi'
+import React from 'react';
+import { Helmet } from 'react-helmet';
+import { CiDiscount1 } from 'react-icons/ci';
+import { HiOutlineGlobeAlt } from 'react-icons/hi2';
+import { IoExpand, IoPeopleOutline, IoSettingsOutline } from 'react-icons/io5';
+import { LuClock3 } from 'react-icons/lu';
+import { VscTools } from 'react-icons/vsc';
+import OutdoorAdvertising1 from '../assets/ServiceItems/OutdoorAdvertising1.jpg';
+import OutdoorAdvertising2 from '../assets/ServiceItems/OutdoorAdvertising2.jpg';
+import OutdoorAdvertising3 from '../assets/ServiceItems/OutdoorAdvertising3.jpg';
+import OutdoorAdvertising4 from '../assets/ServiceItems/OutdoorAdvertising4.jpg';
+import OutdoorAdvertising5 from '../assets/ServiceItems/OutdoorAdvertising5.jpg';
+import OutdoorAdvertising6 from '../assets/ServiceItems/OutdoorAdvertising6.jpg';
+import OutdoorAdvertising7 from '../assets/ServiceItems/OutdoorAdvertising7.jpg';
+import OutdoorAdvertising8 from '../assets/ServiceItems/OutdoorAdvertising8.jpg';
+import OutdoorAdvertising9 from '../assets/ServiceItems/OutdoorAdvertising9.jpg';
+import SpecificADFormats1 from '../assets/ServiceItems/SpecificADFormats1.jpg';
+import SpecificADFormats2 from '../assets/ServiceItems/SpecificADFormats2.jpg';
+import SpecificADFormats3 from '../assets/ServiceItems/SpecificADFormats3.jpg';
+import SpecificADFormats4 from '../assets/ServiceItems/SpecificADFormats4.jpg';
+import SpecificADFormats5 from '../assets/ServiceItems/SpecificADFormats5.jpg';
+import SpecificADFormats6 from '../assets/ServiceItems/SpecificADFormats6.jpg';
+import SpecificADFormats7 from '../assets/ServiceItems/SpecificADFormats7.jpg';
+import SpecificADFormats8 from '../assets/ServiceItems/SpecificADFormats8.jpg';
+import SpecificADFormats9 from '../assets/ServiceItems/SpecificADFormats9.jpg';
+import MallAndLocationBasedAdvertising1 from '../assets/ServiceItems/MallAndLocatioBasedAdvertising (1).jpg';
+import MallAndLocationBasedAdvertising2 from '../assets/ServiceItems/MallAndLocatioBasedAdvertising (2).jpg';
+import MallAndLocationBasedAdvertising3 from '../assets/ServiceItems/MallAndLocatioBasedAdvertising (3).jpg';
+import MallAndLocationBasedAdvertising4 from '../assets/ServiceItems/MallAndLocatioBasedAdvertising (4).jpg';
+import MallAndLocationBasedAdvertising5 from '../assets/ServiceItems/MallAndLocatioBasedAdvertising (5).jpg';
+import MallAndLocationBasedAdvertising6 from '../assets/ServiceItems/MallAndLocatioBasedAdvertising (6).jpg';
+import MallAndLocationBasedAdvertising7 from '../assets/ServiceItems/MallAndLocatioBasedAdvertising (7).jpg';
+import MallAndLocationBasedAdvertising8 from '../assets/ServiceItems/MallAndLocatioBasedAdvertising (8).jpg';
+import MallAndLocationBasedAdvertising9 from '../assets/ServiceItems/MallAndLocatioBasedAdvertising (9).jpg';
+import OccasionReady from '../components/OccasionReady';
 
 const servicesData = [
-    {
-        title: 'Outdoor Advertising',
-        items: [
-            'Outdoor Advertising Dubai',
-            'Outdoor Advertising Abu Dhabi',
-            'Outdoor Advertising Ras Al Khaimah',
-            'Outdoor Advertising Fujairah',
-            'Outdoor Advertising Sharjah',
-            'Outdoor Advertising Ajman',
-            'Outdoor Advertising Al Ain',
-            'Outdoor Advertising Umm Al Quwain',
-            'Outdoor Advertising Fujairah City',
-        ]
-    },
-    {
-        title: 'Specific Ad Formats',
-        items: [
-            'Billboards',
-            'Digital Billboards',
-            'LED Screens',
-            'Transit Ads',
-            'Street Furniture',
-            'Posters',
-            'Flyers',
-            'Banner Ads',
-            'Hoardings',
-        ]
-    },
-    {
-        title: 'Mall & Location-Based Advertising',
-        items: [
-            'Mall Advertising Dubai Mall',
-            'Mall Advertising Mall of Emirates',
-            'Mall Advertising Dubai Marina Mall',
-            'Mall Advertising Sharjah City Centre',
-            'Mall Advertising Ajman City Centre',
-            'Mall Advertising Mall of Al Ain',
-            'Mall Advertising Fujairah City Centre',
-            'Mall Advertising Marina Mall Abu Dhabi',
-            'Mall Advertising Al Wahda Mall',
-        ]
-    },
-    {
-        title: 'Event & Transit-Based Advertising',
-        items: [
-            'Event Advertising Dubai Expo 2020',
-            'Event Advertising Abu Dhabi Formula 1',
-            'Event Advertising Dubai Shopping Festival',
-            'Transit Advertising Dubai Metro',
-            'Transit Advertising Abu Dhabi Buses',
-            'Transit Advertising Sharjah Tram',
-            'Transit Advertising Ajman Public Transport',
-            'Transit Advertising Ras Al Khaimah Buses',
-            'Event Advertising Sharjah Film Festival',
-        ]
-    },
-    {
-        title: 'Digital & Online Advertising',
-        items: [
-            'Social Media Ads',
-            'Google Display Ads',
-            'YouTube Video Ads',
-            'Email Marketing',
-            'Content Marketing',
-            'Influencer Marketing',
-            'SEO & SEM Campaigns',
-            'PPC Ads',
-            'Programmatic Advertising',
-        ]
-    },
-    {
-        title: 'Media Production',
-        items: [
-            'Video Production Dubai',
-            'Photography Services',
-            'Audio Production',
-            '3D Animation',
-            'Post-production Editing',
-            'Graphic Design',
-            'Branding & Logo Design',
-            'Corporate Video Production',
-            'TV Commercials',
-        ]
-    }
+  {
+    title: 'Outdoor Advertising',
+    items: [
+      { text: 'Outdoor Advertising Dubai', image: OutdoorAdvertising1 },
+      { text: 'Outdoor Advertising Abu Dhabi', image: OutdoorAdvertising2 },
+      { text: 'Outdoor Advertising Ras Al Khaimah', image: OutdoorAdvertising3 },
+      { text: 'Outdoor Advertising Fujairah', image: OutdoorAdvertising4 },
+      { text: 'Outdoor Advertising Sharjah', image: OutdoorAdvertising5 },
+      { text: 'Outdoor Advertising Ajman', image: OutdoorAdvertising6 },
+      { text: 'Outdoor Advertising Umm Al Quwain', image: OutdoorAdvertising7 },
+      { text: 'Outdoor Advertising Al Ain', image: OutdoorAdvertising8 },
+      { text: 'Outdoor Advertising Saudi Arabia', image: OutdoorAdvertising9 },
+    ],
+  },
+  {
+    title: 'Specific Ad Formats',
+    items: [
+      { text: 'Billboard Advertising', image: SpecificADFormats1 },
+      { text: 'Bridge Advertising', image: SpecificADFormats2 },
+      { text: 'Lampposts Advertising', image: SpecificADFormats3 },
+      { text: 'Hoardings Advertising', image: SpecificADFormats4 },
+      { text: 'Taxi Advertising', image: SpecificADFormats5 },
+      { text: 'Megacoms Advertising', image: SpecificADFormats6 },
+      { text: 'Building Wraps', image: SpecificADFormats7 },
+      { text: 'Mupi Advertising', image: SpecificADFormats8 },
+      { text: 'Unipole Advertising', image: SpecificADFormats9 },
+    ],
+  },
+  {
+    title: 'Mall & Location-Based Advertising',
+    items: [
+      { text: 'Dubai Mall Advertising', image: MallAndLocationBasedAdvertising1 },
+      { text: 'Mall Of Emirates Advertising', image: MallAndLocationBasedAdvertising2 },
+      { text: 'Dubai Marina Mall Advertising', image: MallAndLocationBasedAdvertising3 },
+      { text: 'Sharjah City Centre Advertising', image: MallAndLocationBasedAdvertising4 },
+      { text: 'Ajman City Centre Advertising', image: MallAndLocationBasedAdvertising5 },
+      { text: 'Ibn Battuta Mall Advertising', image: MallAndLocationBasedAdvertising6 },
+      { text: 'City Walk Advertising', image: MallAndLocationBasedAdvertising7 },
+      { text: 'Mall Of Al Ain Advertising', image: MallAndLocationBasedAdvertising8 },
+      { text: 'Fujairah City Centre Advertising', image: MallAndLocationBasedAdvertising9 },
+    ],
+  },
 ];
 
 const Services = () => {
+  return (
+    <div className='services' id='services'>
 
+      <Helmet>
+        <title>Tailored Advertising Solutions | LED Displays for Every Occasion</title>
+        <meta name="description" content="Explore innovative LED displays for outdoor, specific ad formats, and mall/location-based advertising solutions. Tailored for all types of events and campaigns." />
+        <meta name="keywords" content="outdoor advertising, LED displays, billboard advertising, Dubai mall advertising, taxi advertising, building wraps, location-based advertising" />
+        <meta name="author" content="Pixel World" />
+        <meta property="og:title" content="Tailored Advertising Solutions | LED Displays for Every Occasion" />
+        <meta property="og:description" content="Explore innovative LED displays for outdoor, specific ad formats, and mall/location-based advertising solutions. Tailored for all types of events and campaigns." />
+        <meta property="og:image" content={OutdoorAdvertising1} />
+        <meta property="og:type" content="services" />
+        <meta property="og:url" content={`https://pixelworld.ae/services`} />
+        <meta name="twitter:title" content="Tailored Advertising Solutions | LED Displays for Every Occasion" />
+        <meta name="twitter:description" content="Explore innovative LED displays for outdoor, specific ad formats, and mall/location-based advertising solutions." />
+        <meta name="twitter:image" content={OutdoorAdvertising1}  />
+    <link rel="canonical" href="https://pixelworld.ae/services" />
+        <meta name="twitter:card" content="summary_large_image" />
+      </Helmet>
 
-    return (
-        <div className='services'>
-            <div className='services-hero'>
-                <h1 className='services-title'>Tailored Advertising <br /> Solutions for Every Occasion</h1>
-                <p className='services-description'>Innovative LED Displays for Every Need Explore a wide range of high-performance LED solutions tailored for events,<br /> advertising, corporate setups, and more.</p>
-                <button className='button-two'>Discover Our Services <FiArrowRightCircle /></button>
-            </div>
+      <header className='services-hero'>
+        <h1 className='services-title'>Tailored Advertising Solutions for Every Occasion</h1>
+        <p className='services-description'>
+          Explore innovative LED displays for events, advertising, corporate setups, and more.
+        </p>
+      </header>
 
-            <div>
-                <h1 className='services-bg-title'>From Concept to Completion</h1>
-                <div className='occasionReady-services' >
-                    <div className='occasionReady-title'>From Setup to Support, <br />
-                        We've Got Your Occasions Covered</div>
-                    <div className='occasionReady-description'>We deliver cutting-edge LED display solutions with seamless service from concept to completion.</div>
-                    <div className='row my-5'>
-                        <div className='col-md-6 mb-4'>
-                            <div className='occasionReady-card'>
-                                <div className='d-flex justify-content-between align-items-center text-white'>
-                                    <div className='occasionReady-card-title'>Scalable & Customized Solutions</div>
-                                    <IoExpand size={24} />
-                                </div>
-                                <div className='occasionReady-card-description'>
-                                    Need something unique? We offer custom LED display setups tailored to your event’s theme or special requirements.
-                                </div>
-                            </div>
-                        </div>
+      <section className='services-intro'>
+        <h2 className='services-bg-title'>From Concept to Completion</h2>
+        {/* <OccasionReady/> */}
+      </section>
 
-                        <div className='col-md-6 mb-4'>
-                            <div className='occasionReady-card'>
-                                <div className='d-flex justify-content-between align-items-center text-white'>
-                                    <div className='occasionReady-card-title'>24/7 Technical Support</div>
-                                    <LuClock3 size={24} />
-                                </div>
-                                <div className='occasionReady-card-description'>
-                                    Our specialists are on standby to troubleshoot any issues, minimizing disruptions and maximizing impact
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className='col-md-4 mb-4'>
-                            <div className='occasionReady-card'>
-                                <div className='d-flex justify-content-between align-items-center text-white'>
-                                    <div className='occasionReady-card-title'>LED Display Rentals</div>
-                                    <CiDiscount1 size={24} />
-                                </div>
-                                <div className='occasionReady-card-description'>
-                                    Choose from a wide range of high-quality LED displays tailored for expos, summits, and events of any scale.
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className='col-md-4 mb-4'>
-                            <div className='occasionReady-card'>
-                                <div className='d-flex justify-content-between align-items-center text-white'>
-                                    <div className='occasionReady-card-title'>Custom Installation</div>
-                                    <VscTools size={24} />
-                                </div>
-                                <div className='occasionReady-card-description'>
-                                    Our expert team ensures seamless integration and installation of LED screens, customized to your venue and requirements.
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className='col-md-4 mb-4'>
-                            <div className='occasionReady-card'>
-                                <div className='d-flex justify-content-between align-items-center text-white'>
-                                    <div className='occasionReady-card-title'>On-Site Support</div>
-                                    <IoPeopleOutline size={24} />
-                                </div>
-                                <div className='occasionReady-card-description'>
-                                    From setup to breakdown, we provide full technical support to keep your visuals running smoothly.
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className='col-md-6 mb-4'>
-                            <div className='occasionReady-card'>
-                                <div className='d-flex justify-content-between align-items-center text-white'>
-                                    <div className='occasionReady-card-title'>Maintenance & Upgrades</div>
-                                    <IoSettingsOutline size={24} />
-                                </div>
-                                <div className='occasionReady-card-description'>
-                                    Keep your LED displays in top condition with our regular maintenance and upgrade services. We ensure your equipment is always performing at its best, with the latest technology.
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className='col-md-6 mb-4'>
-                            <div className='occasionReady-card'>
-                                <div className='d-flex justify-content-between align-items-center text-white'>
-                                    <div className='occasionReady-card-title'>Event Setup & Configuration</div>
-                                    <HiOutlineGlobeAlt size={24} />
-                                </div>
-                                <div className='occasionReady-card-description'>
-                                    Our experienced team will handle the full installation and configuration of your LED displays, ensuring optimal Functionalities, and seamless integration with your event environment.
-                                </div>
-                            </div>
-                        </div>
+      <section className='services-list'>
+        {servicesData.map((service, index) => (
+          <div key={index} className='service-category'>
+            <h3 className='service-category-title'>{service.title}</h3>
+            <div className='row'>
+              {service.items.map((item, itemIndex) => (
+                <div key={itemIndex} className='col-md-4'>
+                  <div className='service-item'>
+                    <div className='service-image-container'>
+                      <img
+                        src={item.image}
+                        alt={item.text}
+                        className='service-image'
+                        loading='lazy'
+                        height="100%" 
+                        width="100%"
+                      />
                     </div>
+                    <p className='service-text'>{item.text}</p>
+                  </div>
                 </div>
+              ))}
             </div>
+          </div>
+        ))}
+      </section>
 
-            <div>
-                <h1 className='services-subtitle'>We Don’t Stop There...</h1>
-
-                {/* Loop through each category and its items */}
-                {servicesData.map((service, index) => (
-                    <div className='mb-5' key={index}>
-                        <h4 className='mb-4'>{service.title}</h4>
-
-                        <div className='d-flex flex-wrap'>
-                            {/* Map over the items of each category */}
-                            {service.items.map((item, idx) => (
-                                <div className='service-item' key={idx}>
-                                    {item}
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                ))}
+      <section className='my-5'>
+        <h2 className='services-subtitle text-center'>Why Choose Us?</h2>
+        <p className='services-description'>
+          We provide tailored LED display solutions for every occasion.
+        </p>
+        <div className='row'>
+          <div className='col-lg-4 col-md-6 mb-3'>
+            <div className='innovateDisplay-card rounded'>
+              <h3 className='innovateDisplay-card-title'>Experience Across Industries</h3>
+              <p className='innovateDisplay-card-description'>
+                Expertise in diverse projects, from corporate events to campaigns.
+              </p>
             </div>
-
-            <div className='my-5'>
-                <h1 className='services-subtitle text-center'>Why Choose Us?</h1>
-                <p className='services-description'>We deliver cutting-edge LED display solutions with seamless service from concept to completion.</p>
-
-                <div className='row' >
-                <div className='col-lg-4 col-md-6 mb-3'>
-              <div className='innovateDisplay-card rounded '>
-                <div className='innovateDisplay-card-title'>Experience Across Industries</div>
-                <div className='innovateDisplay-card-description'>
-                From events to corporate campaigns, we bring expertise to every project
-                </div>
-              </div>
+          </div>
+          <div className='col-lg-4 col-md-6 mb-3'>
+            <div className='innovateDisplay-card rounded'>
+              <h3 className='innovateDisplay-card-title'>Customized Solutions</h3>
+              <p className='innovateDisplay-card-description'>
+                Tailored services to align with your unique needs and goals.
+              </p>
             </div>
-
-            <div className='col-lg-4 col-md-6 mb-3'>
-              <div className='innovateDisplay-card rounded '>
-                <div className='innovateDisplay-card-title'>Customized Solutions</div>
-                <div className='innovateDisplay-card-description'>
-                Tailored services to match your unique needs and goals
-                </div>
-              </div>
+          </div>
+          <div className='col-lg-4 col-md-6 mb-3'>
+            <div className='innovateDisplay-card rounded'>
+              <h3 className='innovateDisplay-card-title'>Global Reach</h3>
+              <p className='innovateDisplay-card-description'>
+                Bringing visibility to brands across the world.
+              </p>
             </div>
-
-
-            <div className='col-lg-4 col-md-6 mb-3'>
-              <div className='innovateDisplay-card rounded '>
-                <div className='innovateDisplay-card-title'>Global Reach</div>
-                <div className='innovateDisplay-card-description'>
-                Our work spans locations worldwide, ensuring your brand is seen everywhere
-                </div>
-              </div>
-            </div>
-
-                </div>
-            </div>
-
-            <div className='about-partner'>
-                <h1 className='about-title'>Partner with Us</h1>
-                <div className='about-discover'>
-                    <div className='row'>
-                        <div className='col-md-3 mb-3'>
-                            <img src={logoWhite} alt='logoWhite' width="100%" height="100%" />
-                        </div>
-                        <div className='col-md-9 mb-3'>
-                            <div className='about-discover-text'>
-                                Submit Your Inquiry <FiArrowRightCircle />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
-    )
-}
+      </section>
+    </div>
+  );
+};
 
-export default Services
+export default Services;

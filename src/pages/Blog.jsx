@@ -1,0 +1,97 @@
+import React, { useEffect, useState } from 'react'
+import exploreData from '../data/exploreData';
+import { IoShareSocial } from 'react-icons/io5';
+import { useParams } from 'react-router-dom'; // React Router hook
+import { Helmet } from 'react-helmet';
+import { Link } from 'react-router-dom';
+import ExploreImageOne from '../assets/Indoor Led display.jpg';
+
+
+const Blog = () => {
+    const handleScrollToTop = () => {
+        window.scrollTo({
+          top: 0, // Scroll to the top of the page
+          behavior: 'smooth', // Smooth scroll animation
+        });
+      };
+    return (
+        <div className="product">
+            {/* React Helmet for SEO */}
+            <Helmet>
+                <title>Explore the World of LED Displays | Pixelworld</title>
+                <meta
+                    name="description"
+                    content="Discover insights, trends, and solutions for events, advertising, and beyond with our recent news posts and featured articles on LED displays."
+                />
+                <meta property="og:title" content="Explore the World of LED Displays | Pixelworld" />
+                <meta
+                    property="og:description"
+                    content="Discover insights, trends, and solutions for events, advertising, and beyond with our recent news posts and featured articles on LED displays."
+                />
+                <meta property="og:image" content={ExploreImageOne} />
+                <meta property="og:url" content="https://pixelworld.ae/blog" />
+                <meta name="twitter:title" content="Explore the World of LED Displays | Pixelworld" />
+        <meta property="og:type" content="blogs" />
+                <meta
+                    name="twitter:description"
+                    content="Discover insights, trends, and solutions for events, advertising, and beyond with our recent news posts and featured articles on LED displays."
+                />
+                <meta name="twitter:image" content={ExploreImageOne} />
+                <meta name="robots" content="index, follow" />
+                <link rel="canonical" href="https://pixelworld.ae/blog" />
+            </Helmet>
+
+            <div className='hero-image-container rounded mb-4'>
+                <img src={ExploreImageOne} alt='ExploreImageOne' width="100%" height="100%" className='hero-image rounded' />
+                <div className="blog-image-overlay"></div>
+                <div className='blog-content'>
+                    <div className='d-flex align-items-center flex-column'>
+                        {/* <h2 className='hero-title'>Pixel World</h2> */}
+                        {/* <div className='hero-description'>Seamless Visual Experiences, From Concept to Completion</div> */}
+                    </div>
+                    <div className='blog-subcontent'>
+                        <h2 className=' blog-text'>Featured</h2>
+                        <h1 className=' blog-title'>Illuminating Ideas: Explore the World of LED Displays</h1>
+
+                        <h2 className=' blog-text'>Discover insights, trends, and solutions for events, advertising, and beyond.</h2>
+                        {/* <div className='d-flex flex-column gap-1'>
+                                <a href='https://wa.me/+971585321473' className='text-decoration-none' target='_blank'><button className='buttonTwo d-flex align-items-center gap-2'><FaWhatsapp /> +971585321473</button></a>
+                                <a href='https://wa.me/+971555131473' className='text-decoration-none' target='_blank'><button className='buttonTwo d-flex align-items-center gap-2'><FaWhatsapp /> +971555131473</button></a>
+                            </div> */}
+                    </div>
+                </div>
+            </div>
+            <h2 className='product-title'>Recent News Post</h2>
+            <div className='d-flex justify-content-between align-items-center'>
+                <div className='row'>
+                    {exploreData.map((item, index) => (
+                        <>
+                            <div key={index} className='col-md-4'>
+                                <Link onClick={handleScrollToTop} to={`/blog/${item.blogKey}`} className='text-decoration-none text-dark' >
+                                    <div className='service-item'>
+                                        <div className='service-image-container'>
+                                            <img
+                                                src={item.image}
+                                                alt={item.title}
+                                                className='service-image'
+                                                loading='lazy'
+                                                height="100%"
+                                                width="100%"
+                                            />
+                                        </div>
+                                        <p className='service-text'>{item.title}</p>
+                                        <button className='blog-button'>Read more</button>
+                                    </div>
+                                </Link>
+                            </div>
+                        </>
+                    ))}
+                </div>
+
+            </div>
+        </div>
+
+    )
+}
+
+export default Blog
