@@ -12,19 +12,51 @@ import ClientLogo7 from '../assets/ClientLogoSeven.png';
 import ClientLogo8 from '../assets/ClientLogoEight.png';
 import ClientLogo9 from '../assets/ClientLogoNine.png';
 import { Helmet } from 'react-helmet';
+import logo from '../assets/px-logo-web.png'
 
 // import { FiArrowRightCircle } from 'react-icons/fi';
 
 const AboutUs = () => {
+
+  const schemaData = {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "About Us | Innovative LED Display Solutions",
+    "description": "Discover our mission, vision, and core values as we redefine visual storytelling with cutting-edge LED display solutions worldwide.",
+    "url": "https://www.pixelworld.ae/aboutus",
+    "mainEntity": {
+        "@type": "Organization",
+        "name": "Pixel World",
+        "url": "https://www.pixelworld.ae",
+        "logo": {logo}, // Replace with your actual logo URL
+        "description": "Pixel World is a leader in innovative LED display solutions, transforming visual storytelling across the globe.",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+971585321473", // Replace with your contact number
+            "contactType": "Customer Service",
+            "areaServed": "Worldwide",
+            "availableLanguage": ["English", "Arabic"]
+        },
+        "sameAs": [
+            "https://www.facebook.com/share/1FUH2at763/?mibextid=wwXIfr",
+            "https://www.instagram.com/pixelworldfzc?igsh=OHMwc3Zpazg3Y25y",
+            // "https://www.linkedin.com/company/pixelworld",
+            "https://medium.com/@pixelworldfzc",
+            "https://www.blogger.com/u/2/blog/posts/4721417252822204922"
+        ]
+    }
+};
   return (
     <>
        <Helmet>
-        <title>About Us | Innovative LED Display Solutions</title>
-        <meta name="description" content="Discover our mission, vision, and core values as we redefine visual storytelling with cutting-edge LED display solutions worldwide." />
-        <meta name="keywords" content="LED display solutions, visual storytelling, innovative technology, global illumination, happy clients" />
+        <title>LED Screen Dubai | Outdoor LED Screen | Digital Screen | PixelWorld</title>
+        <meta name="description" content="PixelWorld offers premium LED screen solutions in Dubai, including outdoor LED screens and digital screens. Call now for the best LED screen supplier in Dubai!" />
+        <meta name="keywords" content="led screen dubai, outdoor led screen, led screen supplier, digital screen" />
         <meta name="author" content="Pixel World" />
-      <link rel="canonical" href="https://pixelworld.ae/aboutus" />
-
+      <link rel="canonical" href="https://www.pixelworld.ae/aboutus" />
+      <script type="application/ld+json">
+                    {JSON.stringify(schemaData)}
+                </script>
       </Helmet>
       <section className='innovateDisplay' id="aboutus">
         <div className='d-flex justify-content-center'>

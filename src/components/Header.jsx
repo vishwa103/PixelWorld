@@ -39,11 +39,16 @@ const Header = () => {
       setNavColor('var(--black-color)');
       setNavBackgroundColor('var(--white-color)'); // Navbar background for About Us page
       document.body.style.background = 'var(--white-color)'; // Background color for About Us page
-    }  else if (location.pathname === '/projects') {
+    }  else if (location.pathname === '/products') {
       setNavColor('var(--white-color)');
       setNavBackgroundColor('var(--black-color)'); // Navbar background for Projects page
       document.body.style.background = 'var(--black-color)'; // Background color for Projects page
     } else if (location.pathname === '/services') {
+      setNavColor('var(--black-color)');
+      setNavBackgroundColor('var(--white-color)'); // Navbar background for Services page
+      document.body.style.background = 'var(--white-color)'; // Background color for Services page
+    }
+    else if (location.pathname.includes('/product')) {
       setNavColor('var(--black-color)');
       setNavBackgroundColor('var(--white-color)'); // Navbar background for Services page
       document.body.style.background = 'var(--white-color)'; // Background color for Services page
@@ -66,6 +71,14 @@ const Header = () => {
       document.body.style.background = '';
     };
   }, [location]);
+
+  const handleScrollToBottom = () => {
+    window.scrollTo({
+      top: document.body.scrollHeight, // Scroll to the bottom of the page
+      behavior: 'smooth', // Smooth scroll animation
+    });
+  };
+  
 
   if (isLoading) {
     return (
@@ -109,7 +122,7 @@ const Header = () => {
             textAlign: 'center',
           }}
         >
-          Seamless Visual Experiences, From <br /> Concept to Completion
+          Experience High Quality Led Screens <br /> and Digital Displays with Pixel World 
         </h2>
       </div>
     );
@@ -159,12 +172,12 @@ const Header = () => {
             About Us
           </Nav.Link>
           <Nav.Link
-            className={`nav-link ${activeLink === '/projects' ? 'active' : ''}`}
+            className={`nav-link ${activeLink === '/products' ? 'active' : ''}`}
             as={Link}
-            to="/projects"
+            to="/products"
             style={{ color: navColor }}
           >
-            Projects
+            Products
           </Nav.Link><Nav.Link
             className={`nav-link ${activeLink === '/blog' ? 'active' : ''}`}
             as={Link}
@@ -191,7 +204,7 @@ const Header = () => {
           </Nav.Link>
         </Nav>
 
-        <button className="button-one" href="#getintouch">
+        <button className="button-one" onClick={handleScrollToBottom}  href="#getintouch">
           Get in Touch <IoArrowForwardCircleOutline size={20} />
         </button>
       </Navbar.Collapse>

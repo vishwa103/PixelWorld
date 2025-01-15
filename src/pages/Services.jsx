@@ -1,10 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import { CiDiscount1 } from 'react-icons/ci';
-import { HiOutlineGlobeAlt } from 'react-icons/hi2';
-import { IoExpand, IoPeopleOutline, IoSettingsOutline } from 'react-icons/io5';
-import { LuClock3 } from 'react-icons/lu';
-import { VscTools } from 'react-icons/vsc';
+import logo from '../assets/px-logo-web.png'
+
 import OutdoorAdvertising1 from '../assets/ServiceItems/OutdoorAdvertising1.jpg';
 import OutdoorAdvertising2 from '../assets/ServiceItems/OutdoorAdvertising2.jpg';
 import OutdoorAdvertising3 from '../assets/ServiceItems/OutdoorAdvertising3.jpg';
@@ -80,24 +77,53 @@ const servicesData = [
 ];
 
 const Services = () => {
+
+  const schemaData = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Tailored Advertising Solutions | LED Displays for Every Occasion",
+    "description": "Explore innovative LED displays for outdoor, specific ad formats, and mall/location-based advertising solutions. Tailored for all types of events and campaigns.",
+    "provider": {
+        "@type": "Organization",
+        "name": "Pixel World",
+        "url": "https://www.pixelworld.ae",
+        "logo": {
+            "@type": "ImageObject",
+            "url": {logo} // Replace with your logo URL
+        }
+    },
+    "serviceType": "LED Display Advertising Solutions",
+    "areaServed": "Dubai, UAE, GCC", // Customize according to your target areas
+    "offers": {
+        "@type": "Offer",
+        "priceCurrency": "AED",
+        "url": "https://www.pixelworld.ae/services",
+        "price": "Price upon request" // Adjust as needed
+    },
+    "url": "https://www.pixelworld.ae/services"
+};
   return (
     <div className='services' id='services'>
 
       <Helmet>
-        <title>Tailored Advertising Solutions | LED Displays for Every Occasion</title>
-        <meta name="description" content="Explore innovative LED displays for outdoor, specific ad formats, and mall/location-based advertising solutions. Tailored for all types of events and campaigns." />
-        <meta name="keywords" content="outdoor advertising, LED displays, billboard advertising, Dubai mall advertising, taxi advertising, building wraps, location-based advertising" />
+      <title>Pixel World LED Screens & Digital Kiosks – LED Lighting & Supplies</title>
+      <meta name="description" content="Pixel World offers LED screens, digital kiosks, LED lighting & supplies in Dubai. Call now for premium products to elevate your space!" />
+        <meta name="keywords" content="outdoor led display screen, indoor led screen, led screen panel, led screen dubai" />
         <meta name="author" content="Pixel World" />
         <meta property="og:title" content="Tailored Advertising Solutions | LED Displays for Every Occasion" />
         <meta property="og:description" content="Explore innovative LED displays for outdoor, specific ad formats, and mall/location-based advertising solutions. Tailored for all types of events and campaigns." />
         <meta property="og:image" content={OutdoorAdvertising1} />
         <meta property="og:type" content="services" />
-        <meta property="og:url" content={`https://pixelworld.ae/services`} />
+        <meta property="og:url" content={`https://www.pixelworld.ae/services`} />
         <meta name="twitter:title" content="Tailored Advertising Solutions | LED Displays for Every Occasion" />
         <meta name="twitter:description" content="Explore innovative LED displays for outdoor, specific ad formats, and mall/location-based advertising solutions." />
         <meta name="twitter:image" content={OutdoorAdvertising1}  />
-    <link rel="canonical" href="https://pixelworld.ae/services" />
+    <link rel="canonical" href="https://www.pixelworld.ae/services" />
         <meta name="twitter:card" content="summary_large_image" />
+
+        <script type="application/ld+json">
+                    {JSON.stringify(schemaData)}
+                </script>
       </Helmet>
 
       <header className='services-hero'>

@@ -70,13 +70,13 @@ const Footer = () => {
                     <div className="d-flex gap-3 my-3 flex-wrap">
                       <a href='https://www.instagram.com/pixelworldfzc?igsh=OHMwc3Zpazg3Y25y' target='_blank' ><img src={InstaIcon} alt="insta" height={24} width={24} /></a>
                       {/* <img src={XIcon} alt="x" height={24} width={24} /> */}
-                      
+                      <a href='https://www.facebook.com/share/1FUH2at763/?mibextid=wwXIfr' target='_blank' >
                       <img
                         src={FacebookIcon}
                         alt="facebook"
                         height={24}
                         width={24}
-                      />
+                      /></a>
                     </div>
                   </div>
                 </div>
@@ -158,20 +158,11 @@ const Footer = () => {
           <img src={logoWhite} alt="logoWhite" width={200} height={60} />
           {/* <span>Pixel World</span> */}
         </div>
-        {/* <div className="d-flex flex-wrap gap-3 text-white">
-          <HashLink to="/aboutus" smooth className="text-decoration-none text-white">
-            About Us
-          </HashLink>
-          <HashLink to="/projects" smooth className="text-decoration-none text-white">
-            Projects
-          </HashLink>
-          <HashLink to="/services" smooth className="text-decoration-none text-white">
-            Services
-          </HashLink>
-          <HashLink to="/faq" smooth className="text-decoration-none text-white">
-            FAQ
-          </HashLink>
-        </div> */}
+        <div >
+          <a  href='https://www.pixelpanda.ae/' target='_blank' className="footer-text"   >
+        This website is Designed and Developed by The Pixel Panda Technology
+        </a>
+                 </div>
       </div>
     </div>
   );

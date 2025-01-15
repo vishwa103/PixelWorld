@@ -197,7 +197,7 @@ const FAQ = ({ showAll = true }) => {
             content="LED Screens, Digital Signage, LED Video Walls, FAQ, LED Display Technology"
           />
           <meta name="robots" content="index, follow" />
-          <link rel="canonical" href="https://pixelworld.ae/faq" />
+          <link rel="canonical" href="https://www.pixelworld.ae/faq" />
 
           {/* Structured Data (FAQ schema) */}
           <script type="application/ld+json">

@@ -1,21 +1,46 @@
 import React, { useEffect, useState } from 'react'
 import exploreData from '../data/exploreData';
-import { IoShareSocial } from 'react-icons/io5';
-import { useParams } from 'react-router-dom'; // React Router hook
 import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 import ExploreImageOne from '../assets/Indoor Led display.jpg';
+import logo from '../assets/px-logo-web.png'
 
 
 const Blog = () => {
     const handleScrollToTop = () => {
         window.scrollTo({
-          top: 0, // Scroll to the top of the page
-          behavior: 'smooth', // Smooth scroll animation
+            top: 0, // Scroll to the top of the page
+            behavior: 'smooth', // Smooth scroll animation
         });
-      };
+    };
+
+    const schemaData = {
+        "@context": "https://schema.org",
+        "@type": "Blog",
+        "name": "Explore the World of LED Displays | Pixelworld",
+        "description": "Discover insights, trends, and solutions for events, advertising, and beyond with our recent news posts and featured articles on LED displays.",
+        "url": "https://www.pixelworld.ae/blog",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Pixelworld",
+            "logo": {
+                "@type": "ImageObject",
+                "url": {logo} // Replace with your actual logo URL
+            }
+        },
+        "image": {
+            "@type": "ImageObject",
+            "url": ExploreImageOne,
+            "height": 800, // Replace with actual height of the image
+            "width": 1200 // Replace with actual width of the image
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://www.pixelworld.ae/blog"
+        }
+    };
     return (
-        <div className="product">
+        <div className="container-fluid">
             {/* React Helmet for SEO */}
             <Helmet>
                 <title>Explore the World of LED Displays | Pixelworld</title>
@@ -29,16 +54,19 @@ const Blog = () => {
                     content="Discover insights, trends, and solutions for events, advertising, and beyond with our recent news posts and featured articles on LED displays."
                 />
                 <meta property="og:image" content={ExploreImageOne} />
-                <meta property="og:url" content="https://pixelworld.ae/blog" />
+                <meta property="og:url" content="https://www.pixelworld.ae/blog" />
                 <meta name="twitter:title" content="Explore the World of LED Displays | Pixelworld" />
-        <meta property="og:type" content="blogs" />
+                <meta property="og:type" content="blogs" />
                 <meta
                     name="twitter:description"
                     content="Discover insights, trends, and solutions for events, advertising, and beyond with our recent news posts and featured articles on LED displays."
                 />
                 <meta name="twitter:image" content={ExploreImageOne} />
                 <meta name="robots" content="index, follow" />
-                <link rel="canonical" href="https://pixelworld.ae/blog" />
+                <link rel="canonical" href="https://www.pixelworld.ae/blog" />
+                <script type="application/ld+json">
+                    {JSON.stringify(schemaData)}
+                </script>
             </Helmet>
 
             <div className='hero-image-container rounded mb-4'>

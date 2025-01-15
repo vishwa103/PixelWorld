@@ -2,38 +2,42 @@ import React from 'react'
 import heroImage from '../assets/heroImage.jpg'
 import innovateDisplayImage from '../assets/InnovateDisplayImage.png'
 
-import IlliminationImage from '../assets/IlliminationImage.png'
+import logo from '../assets/px-logo-web.png'
 import { Helmet } from 'react-helmet';
-import ClientLogo1 from '../assets/ClientLogoOne.png'
-import ClientLogo2 from '../assets/ClientLogoTwo.png'
-import ClientLogo3 from '../assets/ClientLogoThree.png'
-import ClientLogo4 from '../assets/ClientLogoFour.png'
-import ClientLogo5 from '../assets/ClientLogoFive.png'
-import ClientLogo6 from '../assets/ClientLogoSix.png'
-import ClientLogo7 from '../assets/ClientLogoSeven.png'
-import ClientLogo8 from '../assets/ClientLogoEight.png'
-import ClientLogo9 from '../assets/ClientLogoNine.png'
-// import ClientLogo10 from '../assets/ClientLogoTen.png'
-// import ClientLogo11 from '../assets/ClientLogoEleven.png'
-// import ClientLogo12 from '../assets/ClientLogoTwelve.png'
-// import ClientLogo13 from '../assets/ClientLogo13.png'
-// import ClientLogo14 from '../assets/ClientLogo14.png'
-// import ClientLogo15 from '../assets/ClientLogo15.png'
-// import ClientLogo16 from '../assets/ClientLogo16.png'
-// import ClientLogo17 from '../assets/ClientLogo17.png'
-// import ClientLogo18 from '../assets/ClientLogo18.png'
-// import ClientLogo19 from '../assets/ClientLogo19.png'
-// import ClientLogo20 from '../assets/ClientLogo20.png'
-// import ClientLogo21 from '../assets/ClientLogo21.png'
-// import ClientLogo22 from '../assets/ClientLogo22.png'
-// import ClientLogo23 from '../assets/ClientLogo23.png'
-// import ClientLogo24 from '../assets/ClientLogo24.png'
 
+import Project1 from '../assets/OurProjects/1.jpg'
+import Project2 from '../assets/OurProjects/2.jpg'
+import Project3 from '../assets/OurProjects/3.jpg'
+import Project4 from '../assets/OurProjects/4.jpg'
+import Project5 from '../assets/OurProjects/5.jpg'
+import Project6 from '../assets/OurProjects/6.jpg'
+import Project7 from '../assets/OurProjects/7.jpg'
+import Project8 from '../assets/OurProjects/8.jpg'
+import Project9 from '../assets/OurProjects/9.jpg'
+import Project10 from '../assets/OurProjects/10.jpg'
+import Project11 from '../assets/OurProjects/11.jpg'
+import Project12 from '../assets/OurProjects/12.jpg'
+import Project13 from '../assets/OurProjects/13.jpg'
+import Project14 from '../assets/OurProjects/14.jpg'
+import Project15 from '../assets/OurProjects/15.jpg'
+import Project16 from '../assets/OurProjects/16.jpg'
+import Project17 from '../assets/OurProjects/17.jpg'
+import Project18 from '../assets/OurProjects/18.jpg'
+import Project19 from '../assets/OurProjects/19.jpg'
+import Project20 from '../assets/OurProjects/20.jpg'
+
+
+
+
+
+import Marquee from "react-fast-marquee";
 import ImageOne from '../assets/ImageOne.jpg'
 import ImageTwo from '../assets/ImageTwo.png'
 import ImageThree from '../assets/ImageThree.jpg'
 import ImageFour from '../assets/ImageFour.png'
 import ImageFive from '../assets/ImageFive.jpg'
+import AboutUsHome from '../assets/AboutUsHome.jpg'
+
 
 import WannaWorkImage from '../assets/WannaWorkImage.svg'
 
@@ -46,6 +50,9 @@ import { HiOutlineGlobeAlt } from 'react-icons/hi2';
 import FAQ from '../components/FAQ'
 import Explore from '../components/Explore'
 import { FaWhatsapp } from 'react-icons/fa'
+import exploreData from '../data/exploreData';
+import { Link } from 'react-router-dom';
+import { MdKeyboardArrowRight } from 'react-icons/md';
 
 
 const cardData = [
@@ -105,15 +112,141 @@ Choose Pixelworld for your advertising needs and experience the perfect blend of
     // },
 ];
 
+const OurProjectLeft = [
+    {
+        image: Project1,
+        place: 'Quttainah Specialized Hospital',
+        model: 'P3.9 Outdoor Led Screen'
+    },
+    {
+        image: Project2,
+        place: 'Ministry of Finance, Dubai ',
+        model: 'P1.86 Indoor Curve Led Screen'
+    },
+    {
+        image: Project3,
+        place: 'VIP Design Luxury Automobile',
+        model: 'P2.5 Indoor Led Screen'
+    },{
+        image: Project4,
+        place: 'NARA Lounge & Ba',
+        model: 'P2.9 Indoor Led Screen'
+    },{
+        image: Project5,
+        place: 'Daylone Marine Yacht',
+        model: 'P5 Outdoor Led Screen with Cabinet'
+    },{
+        image: Project6,
+        place: 'The Curve Building',
+        model: 'P2.9 Semi Indoor Led Screen'
+    },{
+        image: Project7,
+        place: 'Link Mara Restaurant',
+        model: 'P3.9 Semi Indoor Led Screen'
+    },{
+        image: Project8,
+        place: 'Kamdhenu Cars',
+        model: 'P2.5 Indoor Led Screen'
+    },{
+        image: Project9,
+        place: 'Great Food Dubai',
+        model: 'P2.5 Indoor Led Screen'
+    },{
+        image: Project10,
+        place: 'Play Game Mobiles',
+        model: 'Led Signage, LightBox & Sticker'
+    },
+];
+
+const OurProjectRight = [
+    {
+        image: Project11,
+        place: 'The Villa Abu Dhabi',
+        model: ' Facade Lighting'
+    },{
+        image: Project12,
+        place: 'Aertex Al Ain Mall ',
+        model: 'P2.5 Indoor Led Screen'
+    },{
+        image: Project13,
+        place: 'Idyllic Interior Design',
+        model: 'Stretch Ceiling with Cloud Print'
+    },{
+        image: Project14,
+        place: 'Tech Wings LLC',
+        model: 'P2.5 Led Screen and Linear Light'
+    },{
+        image: Project15,
+        place: 'Baranda Lebanese Restaurant',
+        model: ' P4 Outdoor Led Screen'
+    },{
+        image: Project16,
+        place: 'Dubai Tennis Stadium',
+        model: 'P2.5 Indoor Led Screen with Sound system'
+    },{
+        image: Project17,
+        place: 'Link By Mara',
+        model: 'P3.91 Outdoor Led Screen with sound system'
+    },{
+        image: Project18,
+        place: 'Bayara Carrefour',
+        model: 'P2.5 Indoor Led Pillar Screen'
+    },{
+        image: Project19,
+        place: 'Citymax Hotels',
+        model: 'P2.5 Indoor Led Screen'
+    },{
+        image: Project20,
+        place: 'RedX Media Event Management ',
+        model: 'P3.91 Outdoor Led Screen'
+    },
+  
+];
+
 
 const Home = () => {
+
+    const handleScrollToTop = () => {
+        window.scrollTo({
+          top: 0, // Scroll to the top of the page
+          behavior: 'smooth', // Smooth scroll animation
+        });
+      };
+
+      const schemaData = {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Pixelworld",
+        "url": "https://www.pixelworld.ae",
+        "logo": {logo}, // Replace with your logo URL
+        "description": "Discover Pixelworld's innovative LED screen advertising solutions. From indoor and outdoor LED screens to traditional advertising, we bring your brand to life.",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+971585321473", // Replace with your contact number
+            "contactType": "Customer Service",
+            "areaServed": "AE",
+            "availableLanguage": ["English", "Arabic"]
+        },
+        "sameAs": [
+            "https://www.facebook.com/share/1FUH2at763/?mibextid=wwXIfr",
+            "https://www.instagram.com/pixelworldfzc?igsh=OHMwc3Zpazg3Y25y",
+            // "https://www.linkedin.com/company/pixelworld",
+            "https://medium.com/@pixelworldfzc",
+            "https://www.blogger.com/u/2/blog/posts/4721417252822204922"
+        ]
+    };
+
     return (
         <div className='home'>
             <Helmet>
-                <title>Pixelworld | Innovative LED Advertising Solutions</title>
-                <meta name="description" content="Discover Pixelworld's innovative LED screen advertising solutions. From indoor and outdoor LED screens to traditional advertising, we bring your brand to life." />
-                <meta name="keywords" content="LED advertising, LED screens, outdoor billboards, indoor video walls, custom LED solutions, Pixelworld" />
-                <link rel="canonical" href="https://pixelworld.ae/" />
+            <title>LED Screen Suppliers in Dubai | Display Screen | LED Display</title>
+            <meta name="description" content="Leading outdoor LED screen supplier in Dubai. High-quality LED screen displays and display screens. Call now for the best LED solutions in Dubai!" />
+                <meta name="keywords" content="led screen suppliers in dubai, outdoor led screen supplier in dubai, display screen, led screen display" />
+                <link rel="canonical" href="https://www.pixelworld.ae" />
+                <meta name="twitter:image" content={heroImage} />
+                <script type="application/ld+json">
+                    {JSON.stringify(schemaData)}
+                </script>
             </Helmet>
             <div className='hero-section'>
                 <div className='hero-image-container'>
@@ -130,7 +263,7 @@ const Home = () => {
                                     Chat with Expert <IoMdArrowForward size={20} />
                                 </button>
                             </div>
-                            <h2 className=' hero-text'>From expert setup to ongoing technical support, Dubai LED Screen Company ensures your event shines bright with our high-quality LED display.</h2>
+                            <h1 className=' hero-text'>No. 1 Dubai LED Screen Company, with indoor and outdoor LED screens.</h1>
                             <div className='d-flex flex-column gap-1'>
                                 <a href='https://wa.me/+971585321473' className='text-decoration-none' target='_blank'><button className='buttonTwo d-flex align-items-center gap-2'><FaWhatsapp /> +971585321473</button></a>
                                 <a href='https://wa.me/+971555131473' className='text-decoration-none' target='_blank'><button className='buttonTwo d-flex align-items-center gap-2'><FaWhatsapp /> +971555131473</button></a>
@@ -141,26 +274,37 @@ const Home = () => {
             </div>
 
             <div className='innovateDisplay'>
-                <div className='d-flex justify-content-center'>
-                    <img src={innovateDisplayImage} alt='Innovate Display' className='innovateDisplay-image' width="100%" height="100%" />
+                <div className='d-flex'>
+                    <h2>About Us</h2>
+                    {/* <img src={innovateDisplayImage} alt='Innovate Display' className='innovateDisplay-image' width="100%" height="100%" /> */}
                 </div>
-                <div className='mt-5'>
+                <div className=''>
                     {/* <h1 className='innovateDisplay-title'>
                         Your Trusted Partner in Every <br /> Display Innovation
                     </h1> */}
                     {/* <div className='innovateDisplay-description'>We deliver cutting-edge LED display solutions with seamless service from concept to completion.</div> */}
-                    <div className='row mt-5'>
+                    <div className='row'>
                         {cardData.map((card, index) => (
-                            <div key={index} className='col-lg-12  mb-2'>
-                                <div className='innovateDisplay-card'>
-                                    <div className='innovateDisplay-card-title'>{card.title}</div>
+                            <div key={index} className='col-lg-8  mb-2'>
+                                {/* <div className='innovateDisplay-card'> */}
+                                    {/* <div className='innovateDisplay-card-title'>{card.title}</div> */}
                                     {/* <h2 className='innovateDisplay-card-description' dangerouslySetInnerHTML={{ __html: card?.description }} />
                                      */}
                                     <h2 className='innovateDisplay-card-description'>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dubai LED Screen Supplier brings award-winning LED solutions to the LED industry by delivering high-quality, customizable, and durable products. As one of the leading companies in the UAE with international recognition, we specialize in the production and installation of indoor and outdoor LED screens and the supply of rental and staging products.
-                                        <br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;With a solutions-oriented approach, we continuously innovate and develop new products based on our customers' needs, regardless of the project size. Recognized with multiple awards, our one-of-a-kind and imaginative visual projects cater to a wide range of clients, amplifying creativity while ensuring cost-effective and reliable solutions.
-                                        <br /> <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Welcome to Pixelworld, your ultimate destination for innovative LED screen advertising solutions that transform how brands connect with their audiences. Whether you're a global enterprise or a local business, we bring unparalleled expertise in LED screen technology, creating visually stunning displays that leave a lasting impact.<br />
-                                        <br /><strong>Our Expertise</strong><br /><br />
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dubai LED Screen Supplier offers premium-quality indoor and outdoor LED screens along with digital advertising solutions for to your needs. We provide customizable LED video walls at affordable prices, ensuring durable products that meet both installation and rental requirements. As a leading LED screen supplier in the UAE, recognized internationally, we handle projects of all sizes, from small businesses to large enterprises.
+                                        <br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;At Pixelworld, we specialize in delivering creative, cost-effective LED screen solutions for various applications, including LED video walls for exhibitions, affordable LED displays for trade shows, and outdoor LED screens for advertising in Dubai. Our award-winning products include high-resolution LED screen rentals for events and stages, permanent installations, and custom LED screen designs.
+                                        <br /><br />Whether you're a global company or a local business looking for cheap but high-quality LED screens in UAE, we ensure your brand connects with your audience through visually stunning LED displays. With our affordable digital signage in Dubai, you can enhance your marketing efforts and achieve outstanding results.
+                                        <br /><br /> Choose Pixelworld for reliable, budget-friendly LED solutions, including LED screens for events in UAE, custom LED walls for conferences, LED video wall, LED signage for retail stores for your shop front sign and indoor LED screens for retail stores. Let us help you elevate your brand with top-rated, energy-efficient LED screens that offer exceptional quality and performance.
+                                        <br /><br />"Are you still looking for LED screens in Dubai? Please contact us to receive the best quote and discover the perfect LED screen solution for your business."
+                                        {/* <b>Indoor LED Screens:</b> High-quality displays for retail, schools, offices, and meeting rooms.<br />
+                                        <br /><b>Outdoor LED Screens:</b> Durable screens for billboards and large ads.<br />
+                                        <br /><b>LED Signage:</b> Digital signage for menus, information, and store signs.<br />
+                                        <br /><b>Home & Office LED Solutions:</b> Stylish and affordable LED screens for homes and offices.<br />
+                                        <br /><b>Custom LED Walls:</b> Flexible and unique LED designs, including 90° and 360° screens.<br />
+                                        <br /><b>Transparent LED:</b> Innovative displays for retail and creative spaces.<br />
+                                        <br /><b>3D and Floor LEDs:</b> Cutting-edge technology for immersive experiences.<br /> */}
+                                        {/* <br /> <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Welcome to Pixelworld, your ultimate destination for innovative LED screen advertising solutions that transform how brands connect with their audiences. Whether you're a global enterprise or a local business, we bring unparalleled expertise in LED screen technology, creating visually stunning displays that leave a lasting impact.<br /> */}
+                                        {/* <br /><strong>Our Expertise</strong><br /><br />
                                         At Pixelworld, we specialize in state-of-the-art LED screen technology designed to deliver breathtaking visuals that captivate audiences.
                                         <br />•	Indoor LED Screens: High-definition displays for retail, schools, meeting rooms, and corporate offices.
                                         <br />•	Outdoor LED Screens: Durable and weather-resistant screens for billboards and large-scale advertisements.
@@ -214,23 +358,25 @@ const Home = () => {
                                         </div>
                                         <br />
                                         <br />
-                                        Choose Pixelworld for your advertising needs and experience the perfect blend of innovation, artistry, and engineering. With every detail of your campaign carefully crafted, we ensure your brand is the center of attention, delivering unforgettable results with cutting-edge LED technology.
+                                        Choose Pixelworld for your advertising needs and experience the perfect blend of innovation, artistry, and engineering. With every detail of your campaign carefully crafted, we ensure your brand is the center of attention, delivering unforgettable results with cutting-edge LED technology. */}
                                     </h2>
-                                </div>
+                                {/* </div> */}
                             </div>
                         ))}
+                        <div className='col-lg-4'>
+                            <div className='explore-image-container'>
+                            <img src={AboutUsHome} alt='About Us Home' className='explore-image' width="100%" height="100%" />
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-
-            <Explore />
-
             <div className='occasionReady'>
                 <div className='occasionReady-title'>From Setup to Support, <br />
                     We've Got Your Occasions Covered</div>
                 <div className='occasionReady-description'>We deliver cutting-edge LED display solutions with seamless service from concept to completion.</div>
                 <div className='row my-5'>
-                    <div className='col-md-6 mb-4'>
+                    {/* <div className='col-md-6 mb-4'>
                         <div className='occasionReady-card'>
                             <div className='d-flex justify-content-between align-items-center text-white'>
                                 <div className='occasionReady-card-title'>Scalable & Customized Solutions</div>
@@ -252,45 +398,79 @@ const Home = () => {
                                 Our specialists are on standby to troubleshoot any issues, minimizing disruptions and maximizing impact
                             </div>
                         </div>
-                    </div>
+                    </div> */}
 
                     <div className='col-md-4 mb-4'>
-                        <div className='occasionReady-card'>
+                        <div className='occasionReady-card h-100'>
                             <div className='d-flex justify-content-between align-items-center text-white'>
-                                <div className='occasionReady-card-title'>LED Display Rentals</div>
+                                <div className='occasionReady-card-title'>Digital Kiosk Solutions</div>
                                 <CiDiscount1 size={24} />
                             </div>
                             <div className='occasionReady-card-description'>
-                                Choose from a wide range of high-quality LED displays tailored for expos, summits, and events of any scale.
+                               
+                                •	Interactive Touchscreen Kiosks
+•	Self-Service Digital Kiosks
+•	Indoor & Outdoor Digital Kiosks
+•	Wayfinding Digital Kiosks
+•	Digital Kiosks for Retail and Malls
+•	Queue Management Kiosks
+•	Digital Menu Boards
+•	Information and Directory Kiosks
+•	Advertising and Promotion Kiosks
+•	Customizable Digital Kiosks for Branding
+                                
                             </div>
                         </div>
                     </div>
 
                     <div className='col-md-4 mb-4'>
-                        <div className='occasionReady-card'>
+                        <div className='occasionReady-card h-100'>
                             <div className='d-flex justify-content-between align-items-center text-white'>
-                                <div className='occasionReady-card-title'>Custom Installation</div>
+                                <div className='occasionReady-card-title'>Indoor LED Solutions</div>
                                 <VscTools size={24} />
                             </div>
                             <div className='occasionReady-card-description'>
-                                Our expert team ensures seamless integration and installation of LED screens, customized to your venue and requirements.
-                            </div>
+                            •	High-Resolution Indoor LED Displays
+•	LED Screens for Retail and Showrooms
+•	Corporate Office LED Displays
+•	LED Displays for Meeting Rooms and Conferences
+•	Interactive Indoor LED Screens
+•	Flexible LED Screens for Custom Installations
+•	90° and 360° Curved LED Screens
+•	Digital Signage for Indoor Advertising
+•	Indoor LED Walls for Events and Exhibitions
+•	Custom Indoor LED Solutions for Branding
+•	Seamless Video Walls for Immersive Experiences
+•	Energy-Efficient LED Displays for Long-Term Use
+</div>
                         </div>
                     </div>
 
                     <div className='col-md-4 mb-4'>
-                        <div className='occasionReady-card'>
+                        <div className='occasionReady-card h-100'>
                             <div className='d-flex justify-content-between align-items-center text-white'>
-                                <div className='occasionReady-card-title'>On-Site Support</div>
+                                <div className='occasionReady-card-title'>Outdoor LED Solutions</div>
                                 <IoPeopleOutline size={24} />
                             </div>
                             <div className='occasionReady-card-description'>
-                                From setup to breakdown, we provide full technical support to keep your visuals running smoothly.
+                            •	High-Resolution Outdoor LED Displays
+•	LED Screens for Billboards and Digital Signage
+•	Weatherproof Outdoor LED Screens
+•	Outdoor Advertising LED Walls
+•	Large-Scale LED Displays for Events
+•	Interactive Outdoor LED Screens
+•	Outdoor Mesh and Net LED Screens
+•	LED Screens for Stadiums and Arenas
+•	Digital Menu Boards for Outdoor Spaces
+•	Customizable Outdoor LED Displays for Branding
+•	Outdoor LED Screens for Public Spaces and Malls
+•	Solar-Powered Outdoor LED Solutions
+•	Energy-Efficient Outdoor LED Screens for Long-Term Use
                             </div>
                         </div>
                     </div>
 
-                    <div className='col-md-6 mb-4'>
+                    {/* <div className='col-md-6 mb-4'>
                         <div className='occasionReady-card'>
                             <div className='d-flex justify-content-between align-items-center text-white'>
                                 <div className='occasionReady-card-title'>Maintenance & Upgrades</div>
@@ -312,144 +492,81 @@ const Home = () => {
                                 Our experienced team will handle the full installation and configuration of your LED displays, ensuring optimal Functionalities, and seamless integration with your event environment.
                             </div>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
+            <Explore />
 
-            <div>
-
-                <div className='row my-3 p-3'>
-                    <div className='col-md-7 mb-3'>
-                        <div className='illumination-card'>
-                            <div className='illumination-card-image-container'>
-                                <img src={ImageOne} alt='Card Image' className='illumination-card-image' width="100%" height="100%" />
-                            </div>
-                            <div className='d-flex justify-content-between align-items-center'>
-                                <div className='illuminaion-card-title' >Quttainah Specialized Hospital</div>
-                                <div className='illuminaion-card-text'>Outdoor LED Screen </div>
-                            </div>
+            <div className='our-projects-container'>
+                {/* <p className='our-project-subtext'>Still Searching ?...</p> */}
+                <h2 className='our-project-title'>Our Projects and Clients</h2>
+            <div className='my-3'>
+                <Marquee direction='left' pauseOnHover={true} className='mb-3'>
+                    {OurProjectLeft.map((project, index) => 
+                    <div key={index} className='our-projects-image-container'>
+                        <img src={project.image} alt='Image one' width="100%" height="100%" className='our-projects-image' />
+                        <div className='hero-image-overlay '></div>
+                        <div className='our-projects-content'>
+                            <h6>{project.place}</h6>
+                            <p className='m-0'>{project.model}</p>
                         </div>
                     </div>
+                    )}
+               </Marquee>
 
-                    <div className='col-md-5 mb-3'>
-                        <div className='illumination-card'>
-                            <div className='illumination-card-image-container'>
-                                <img src={ImageTwo} alt='Card Image' className='illumination-card-image' width="100%" height="100%" />
-                            </div>
-                            <div className='d-flex justify-content-between align-items-center'>
-                                <div className='illuminaion-card-title' >Ministry of Finance - Dubai </div>
-                                <div className='illuminaion-card-text'>Indoor curve LED Screen</div>
-                            </div>
+                <Marquee direction='right'  pauseOnHover={true}  className='mb-3'>
+                {OurProjectRight.map((project, index) => 
+                    <div key={index} className='our-projects-image-container'>
+                        <img src={project.image} alt='Image one' width="100%" height="100%" className='our-projects-image' />
+                        <div className='hero-image-overlay '></div>
+                        <div className='our-projects-content'>
+                            <h6>{project.place}</h6>
+                            <p className='m-0'>{project.model}</p>
                         </div>
                     </div>
-
-                    <div className='col-md-12 mb-3'>
-                        <div className='illumination-card'>
-                            <div className='illumination-card-image-container'>
-                                <img src={ImageThree} alt='Card Image' className='illumination-card-image' width="100%" height="100%" />
-                            </div>
-                            <div className='d-flex justify-content-between align-items-center'>
-                                <div className='illuminaion-card-title' >VIP Design Luxury AutoMobile - Dubai</div>
-                                <div className='illuminaion-card-text'>Indoor LED Screen</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className='col-md-5 mb-3'>
-                        <div className='illumination-card'>
-                            <div className='illumination-card-image-container'>
-                                <img src={ImageFour} alt='Card Image' className='illumination-card-image' width="100%" height="100%" />
-                            </div>
-                            <div className='d-flex justify-content-between align-items-center'>
-                                <div className='illuminaion-card-title' >NARA Lounge & Bar -
-                                    Cluster A
-                                </div>
-                                <div className='illuminaion-card-text'>Indoor LED Screen</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className='col-md-7 mb-3'>
-                        <div className='illumination-card'>
-                            <div className='illumination-card-image-container'>
-                                <img src={ImageFive} alt='Card Image' className='illumination-card-image' width="100%" height="100%" />
-                            </div>
-                            <div className='d-flex justify-content-between align-items-center'>
-                                <div className='illuminaion-card-title' >Daylone marine (YACHT)</div>
-                                <div className='illuminaion-card-text'>Outdoor LED Screen with Cabinet</div>
-                            </div>
-                        </div>
-                    </div>
+                    )}
+                </Marquee>
                 </div>
-
-                <div className='illumination'>
-                    <h2 className='illumination-title'>Bringing Brilliance to<br /> Every Corner of the Globe</h2>
-                    <p className='illumination-description' >From local events to global spectacles, our LED solutions have illuminated stages, streets, and summits worldwide.</p>
-
-                    <img src={IlliminationImage} alt='Illimation' width="100%" height="100%" className="my-5" />
-
-                    <div className='my-5'>
-                        <div className='illimination-subtitle'>Trusted By</div>
-
-                        <div className='d-flex flex-wrap justify-content-center mt-5 align-items-center'>
-                            <div className='logo-container m-4'>
-                                <img src={ClientLogo1} alt='Client Logo' width="100%" height="100%" />
-                            </div>
-                            <div className='logo-container m-4'>
-                                <img src={ClientLogo2} alt='Client Logo' width="100%" height="100%" />
-                            </div>
-                            <div className='logo-container m-4'>
-                                <img src={ClientLogo3} alt='Client Logo' width="100%" height="100%" />
-                            </div>
-                            <div className='logo-container m-4'>
-                                <img src={ClientLogo4} alt='Client Logo' width="100%" height="100%" />
-                            </div>
-                            <div className='logo-container m-4'>
-                                <img src={ClientLogo5} alt='Client Logo' width="100%" height="100%" />
-                            </div>
-                            <div className='logo-container m-4'>
-                                <img src={ClientLogo6} alt='Client Logo' width="100%" height="100%" />
-                            </div>
-                            <div className='logo-container m-4'>
-                                <img src={ClientLogo7} alt='Client Logo' width="100%" height="100%" />
-                            </div>
-                            <div className='logo-container m-4'>
-                                <img src={ClientLogo8} alt='Client Logo' width="100%" height="100%" />
-                            </div>
-                            <div className='logo-container m-4'>
-                                <img src={ClientLogo9} alt='Client Logo' width="100%" height="100%" />
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div className='row my-5 p-3'>
-                        <div className='col-md-9 my-5' >
-                            <h2 className='illumination-title text-start'>See Our Displays in Action</h2>
-                            <p className='illumination-description text-start'>Take a look at our past projects and see how we’ve helped clients bring their events to life. From corporate meetings to large-scale festivals, our LED solutions have made a difference</p>
-                        </div>
-                        <div className='col-md-3 my-5'>
-                            <div className='illimination-count-card '>
-                                <div className='illimination-count'>
-                                    7K+
-                                </div>
-                                <div className='illumination-count-text'>
-                                    Of Happy Clients and Businesses
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
 
             </div>
-
+<div className='px-3'>
+    <div className='d-flex justify-content-between align-items-center'>
+            <h2 className='product-title text-white'>Recent News Post</h2>
+            <Link onClick={handleScrollToTop}  to='/blog'>
+            <button className='button-primary'>View All <MdKeyboardArrowRight /></button></Link>
+            </div>
+            <div className='d-flex justify-content-between align-items-center'>
+                <div className='row'>
+                    {exploreData.slice(0,4).map((item, index) => (
+                        <>
+                            <div key={index} className='col-md-4'>
+                                <Link onClick={handleScrollToTop} to={`/blog/${item.blogKey}`} className='text-decoration-none text-dark' >
+                                    <div className='service-item'>
+                                        <div className='service-image-container'>
+                                            <img
+                                                src={item.image}
+                                                alt={item.title}
+                                                className='service-image'
+                                                loading='lazy'
+                                                height="100%"
+                                                width="100%"
+                                            />
+                                        </div>
+                                        <p className='service-text'>{item.title}</p>
+                                        <button className='blog-button'>Read more</button>
+                                    </div>
+                                </Link>
+                            </div>
+                        </>
+                    ))}
+                </div>
+                </div>
+            </div>
             <FAQ showAll={false} />
 
-            <div style={{ padding: "40px 0" }}>
+            {/* <div style={{ padding: "40px 0" }}>
                 <img src={WannaWorkImage} alt="WannaWorkImage" width="100%" height="100%" />
-            </div>
+            </div> */}
 
 
         </div>

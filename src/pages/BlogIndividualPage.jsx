@@ -3,6 +3,8 @@ import exploreData from '../data/exploreData';
 import { useParams, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import { IoShareSocial } from 'react-icons/io5';
+import logo from '../assets/px-logo-web.png'
+
 
 const BlogIndividualPage = () => {
     const { blogKey } = useParams();
@@ -31,7 +33,7 @@ const BlogIndividualPage = () => {
             navigator.share({
                 title: productData?.title,
                 text: productData?.description,
-                url: `https://pixelworld.ae/blog/${blogKey}`,
+                url: `https://www.pixelworld.ae/blog/${blogKey}`,
             })
                 .then(() => console.log('Successfully shared'))
                 .catch((error) => console.log('Error sharing', error));
@@ -45,10 +47,37 @@ const BlogIndividualPage = () => {
         setIsModalOpen(false);
     };
 
-    const shareableLink = `https://pixelworld.ae/blog/${blogKey}`;
+    const shareableLink = `https://www.pixelworld.ae/blog/${blogKey}`;
+
+    const schemaData = {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": productData?.title,
+        "description": productData?.description,
+        "image": productData?.image,
+        "url": shareableLink,
+        "datePublished": productData?.publishedDate,
+        "dateModified": productData?.modifiedDate || productData?.publishedDate,
+        "author": {
+            "@type": "Person",
+            "name": productData?.authorName || "Pixelworld"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Pixelworld",
+            "logo": {
+                "@type": "ImageObject",
+                "url": {logo} // Replace with your logo URL
+            }
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": shareableLink
+        }
+    };
 
     return (
-        <div className="product">
+        <div className="container-fluid">
             {productData && (
                 <Helmet>
                     <title>{productData.title} | Pixelworld</title>
@@ -59,7 +88,9 @@ const BlogIndividualPage = () => {
                     <meta property="og:url" content={shareableLink} />
                     <meta name="twitter:title" content={productData?.title} />
                     <meta name="twitter:description" content={productData?.description} />
-                    <meta name="twitter:image" content={productData?.image} />
+                    <meta name="twitter:image" content={productData?.image} /><script type="application/ld+json">
+                    {JSON.stringify(schemaData)}
+                </script>
                 </Helmet>
             )}
             <div className='d-flex justify-content-between align-items-center'>
@@ -95,6 +126,8 @@ const BlogIndividualPage = () => {
                 <h2 className='product-title'>Conclusion</h2>
                 <p className='product-description'>{productData?.description}</p>
             </div>
+
+
 
             {/* Modal for sharing */}
             {isModalOpen && (
