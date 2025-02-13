@@ -4,7 +4,7 @@ import { Link, useLocation } from 'react-router-dom'; // React Router hook
 import logo from '../assets/px-logo-web.png';
 import introVideo from '../assets/intro.mp4'; // Add your video here
 import { IoArrowForwardCircleOutline } from 'react-icons/io5';
- // Add a CSS file for smooth animations
+// Add a CSS file for smooth animations
 
 const Header = () => {
   const location = useLocation(); // Get the current location
@@ -39,10 +39,10 @@ const Header = () => {
       setNavColor('var(--black-color)');
       setNavBackgroundColor('var(--white-color)'); // Navbar background for About Us page
       document.body.style.background = 'var(--white-color)'; // Background color for About Us page
-    }  else if (location.pathname === '/products') {
-      setNavColor('var(--white-color)');
-      setNavBackgroundColor('var(--black-color)'); // Navbar background for Projects page
-      document.body.style.background = 'var(--black-color)'; // Background color for Projects page
+    } else if (location.pathname === '/projects') {
+      setNavColor('var(--black-color)');
+      setNavBackgroundColor('var(--white-color)'); // Navbar background for Projects page
+      document.body.style.background = 'var()'; // Background color for Projects page
     } else if (location.pathname === '/services') {
       setNavColor('var(--black-color)');
       setNavBackgroundColor('var(--white-color)'); // Navbar background for Services page
@@ -52,19 +52,31 @@ const Header = () => {
       setNavColor('var(--black-color)');
       setNavBackgroundColor('var(--white-color)'); // Navbar background for Services page
       document.body.style.background = 'var(--white-color)'; // Background color for Services page
-    }else if (location.pathname.includes('/blog')) {
+    } else if (location.pathname.includes('/blog')) {
       setNavColor('var(--black-color)');
       setNavBackgroundColor('var(--white-color)'); // Navbar background for Services page
       document.body.style.background = 'var(--white-color)'; // Background color for Services page
-    }  else if (location.pathname === '/faq') {
+    } else if (location.pathname === '/faq') {
       setNavColor('var(--white-color)');
       setNavBackgroundColor('var(--black-color)'); // Navbar background for FAQ page
       document.body.style.background = 'var(--black-color)'; // Background color for FAQ page
-    } else {
+    } else if (location.pathname === '/contact') {
+      setNavColor('var(--white-color)');
+      setNavBackgroundColor('var(--black-color)'); // Navbar background for FAQ page
+      document.body.style.background = 'var(--black-color)'; // Background color for FAQ page
+    }  else if (location.pathname.includes('/industries')) {
+      setNavColor('var(--white-color)');
+      setNavBackgroundColor('var(--black-color)'); // Navbar background for FAQ page
+      document.body.style.background = 'var(--black-color)'; // Background color for FAQ page
+    }  else if (location.pathname.includes('/industry')) {
+      setNavColor('var(--white-color)');
+      setNavBackgroundColor('var(--black-color)'); // Navbar background for Services page
+      document.body.style.background = 'var(--black-color)'; // Background color for Services page
+    }  else {
       setNavColor('var(--black-color)');
       setNavBackgroundColor('var(--white-color) '); // Default navbar background
-      document.body.style.background = 'linear-gradient(180deg, #FFFFFF 46.2%, #222222 52.72%, #222222 100%) '; 
-    } 
+      document.body.style.background = 'linear-gradient(180deg, #FFFFFF 46.2%, #222222 52.72%, #222222 100%) ';
+    }
 
     // Cleanup: Reset the background color when the component unmounts or when the page changes
     return () => {
@@ -78,7 +90,7 @@ const Header = () => {
       behavior: 'smooth', // Smooth scroll animation
     });
   };
-  
+
 
   if (isLoading) {
     return (
@@ -122,7 +134,7 @@ const Header = () => {
             textAlign: 'center',
           }}
         >
-          Experience High Quality Led Screens <br /> and Digital Displays with Pixel World 
+          Experience High Quality Led Screens <br /> and Digital Displays with Pixel World
         </h2>
       </div>
     );
@@ -145,11 +157,11 @@ const Header = () => {
         style={{ color: navColor }}
       >
         <img src={logo} alt="Pixel World" width={150} height={45} />
-        {/* <b>Pixel World</b> */}
+        
       </Navbar.Brand>
 
       <Navbar.Toggle
-      className='nav-toggle'
+        className='nav-toggle'
         aria-controls="navbar-nav"
       />
 
@@ -172,12 +184,19 @@ const Header = () => {
             About Us
           </Nav.Link>
           <Nav.Link
-            className={`nav-link ${activeLink === '/products' ? 'active' : ''}`}
+            className={`nav-link ${activeLink === '/industries' ? 'active' : ''}`}
             as={Link}
-            to="/products"
+            to="/industries"
+            style={{ color: navColor }}>
+              Industries
+            </Nav.Link>
+          <Nav.Link
+            className={`nav-link ${activeLink === '/projects' ? 'active' : ''}`}
+            as={Link}
+            to="/projects"
             style={{ color: navColor }}
           >
-            Products
+            Projects
           </Nav.Link><Nav.Link
             className={`nav-link ${activeLink === '/blog' ? 'active' : ''}`}
             as={Link}
@@ -186,27 +205,30 @@ const Header = () => {
           >
             Blog
           </Nav.Link>
-          <Nav.Link
+          {/* <Nav.Link
             className={`nav-link ${activeLink === '/services' ? 'active' : ''}`}
             as={Link}
             to="/services"
             style={{ color: navColor }}
           >
             Services
-          </Nav.Link>
-          <Nav.Link
+          </Nav.Link> */}
+          {/* <Nav.Link
             className={`nav-link ${activeLink === '/faq' ? 'active' : ''}`}
             as={Link}
             to="/faq"
             style={{ color: navColor }}
           >
             FAQ
-          </Nav.Link>
+          </Nav.Link> */}
+         
         </Nav>
 
-        <button className="button-one" onClick={handleScrollToBottom}  href="#getintouch">
-          Get in Touch <IoArrowForwardCircleOutline size={20} />
-        </button>
+        <Link to='/contact' className='text-decoration-none'>
+          <button className="button-one" >
+            Get in Touch <IoArrowForwardCircleOutline size={20} />
+          </button>
+        </Link>
       </Navbar.Collapse>
     </Navbar>
   );

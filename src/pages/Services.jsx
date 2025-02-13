@@ -30,6 +30,8 @@ import MallAndLocationBasedAdvertising7 from '../assets/ServiceItems/MallAndLoca
 import MallAndLocationBasedAdvertising8 from '../assets/ServiceItems/MallAndLocatioBasedAdvertising (8).jpg';
 import MallAndLocationBasedAdvertising9 from '../assets/ServiceItems/MallAndLocatioBasedAdvertising (9).jpg';
 import OccasionReady from '../components/OccasionReady';
+import { OurProjectLeft, OurProjectRight } from '../data/ProjectsData';
+import { Link } from 'react-router-dom';
 
 const servicesData = [
   {
@@ -84,61 +86,74 @@ const Services = () => {
     "name": "Tailored Advertising Solutions | LED Displays for Every Occasion",
     "description": "Explore innovative LED displays for outdoor, specific ad formats, and mall/location-based advertising solutions. Tailored for all types of events and campaigns.",
     "provider": {
-        "@type": "Organization",
-        "name": "Pixel World",
-        "url": "https://www.pixelworld.ae",
-        "logo": {
-            "@type": "ImageObject",
-            "url": {logo} // Replace with your logo URL
-        }
+      "@type": "Organization",
+      "name": "Pixel World",
+      "url": "https://www.pixelworld.ae",
+      "logo": {
+        "@type": "ImageObject",
+        "url": { logo } // Replace with your logo URL
+      }
     },
     "serviceType": "LED Display Advertising Solutions",
     "areaServed": "Dubai, UAE, GCC", // Customize according to your target areas
     "offers": {
-        "@type": "Offer",
-        "priceCurrency": "AED",
-        "url": "https://www.pixelworld.ae/services",
-        "price": "Price upon request" // Adjust as needed
+      "@type": "Offer",
+      "priceCurrency": "AED",
+      "url": "https://www.pixelworld.ae/services",
+      "price": "Price upon request" // Adjust as needed
     },
     "url": "https://www.pixelworld.ae/services"
-};
+  };
+
+  const handleScrollToTop = () => {
+    window.scrollTo({
+      top: 0, // Scroll to the top of the page
+      behavior: 'smooth', // Smooth scroll animation
+    });
+  };
   return (
     <div className='services' id='services'>
 
       <Helmet>
-      <title>Pixel World LED Screens & Digital Kiosks – LED Lighting & Supplies</title>
-      <meta name="description" content="Pixel World offers LED screens, digital kiosks, LED lighting & supplies in Dubai. Call now for premium products to elevate your space!" />
+        <title>Pixel World LED Screens & Digital Kiosks – LED Lighting & Supplies</title>
+        <meta name="description" content="Pixel World offers LED screens, digital kiosks, LED lighting & supplies in Dubai. Call now for premium products to elevate your space!" />
         <meta name="keywords" content="outdoor led display screen, indoor led screen, led screen panel, led screen dubai" />
         <meta name="author" content="Pixel World" />
         <meta property="og:title" content="Tailored Advertising Solutions | LED Displays for Every Occasion" />
         <meta property="og:description" content="Explore innovative LED displays for outdoor, specific ad formats, and mall/location-based advertising solutions. Tailored for all types of events and campaigns." />
         <meta property="og:image" content={OutdoorAdvertising1} />
-        <meta property="og:type" content="services" />
-        <meta property="og:url" content={`https://www.pixelworld.ae/services`} />
+        <meta property="og:type" content="projects" />
+        <meta property="og:url" content={`https://www.pixelworld.ae/projects`} />
         <meta name="twitter:title" content="Tailored Advertising Solutions | LED Displays for Every Occasion" />
         <meta name="twitter:description" content="Explore innovative LED displays for outdoor, specific ad formats, and mall/location-based advertising solutions." />
-        <meta name="twitter:image" content={OutdoorAdvertising1}  />
-    <link rel="canonical" href="https://www.pixelworld.ae/services" />
+        <meta name="twitter:image" content={OutdoorAdvertising1} />
+        <link rel="canonical" href="https://www.pixelworld.ae/projects" />
         <meta name="twitter:card" content="summary_large_image" />
 
         <script type="application/ld+json">
-                    {JSON.stringify(schemaData)}
-                </script>
+          {JSON.stringify(schemaData)}
+        </script>
       </Helmet>
 
       <header className='services-hero'>
-        <h1 className='services-title'>Tailored Advertising Solutions for Every Occasion</h1>
+        <h1 className='services-title'>No.1 Leading Led screen <br/> Supplier in Dubai</h1>
         <p className='services-description'>
-          Explore innovative LED displays for events, advertising, corporate setups, and more.
+          We got all kinds of LED screens, LED displays covered for all your events whether Indoor, Outdoor <br/>or Customised Led screens or Large Video Walls
         </p>
       </header>
 
-      <section className='services-intro'>
-        <h2 className='services-bg-title'>From Concept to Completion</h2>
-        {/* <OccasionReady/> */}
-      </section>
+      <p className='services-description text-start text-justify'>
+        At PixelWorld, we are proud to be the leading LED screen supplier in Dubai, offering cutting-edge technology and exceptional service to all our clients. We understand that each client is unique, which is why we provide personalized solutions designed to meet your specific needs. From indoor LED video walls and customized LED screens to interactive kiosks and digital signage, we are committed to delivering the best products and services in the industry.
+        <br /><br />Our portfolio includes diverse applications such as digital advertisement displays, street and highway digital display advertisements, ceiling LED screens, and floor LED screens. We also provide high-quality LED signage solutions for a variety of environments, including art museums, galleries, exhibitions, restaurants, hotel lobbies, home theatres, and office receptions. Whether you need displays for conference halls, meeting rooms, corporate events, event staging and rentals, or LED strips, PixelWorld is your trusted partner for every visual need.
+        <br /><br />We have successfully delivered numerous projects across Dubai, Abu Dhabi, and Sharjah, and our clients rely on us for innovative, reliable, and visually striking solutions. We also pride ourselves on providing top-notch maintenance services, ensuring that each product continues to perform at its best over time. At PixelWorld, we’re not just a LED screen supplier – we’re a partner in creating unforgettable experiences.
+        <br /><br />Explore our recent projects and see why PixelWorld is the best choice for your LED screen needs.
+      </p>
 
-      <section className='services-list'>
+      {/* <section className='services-intro'>
+        <h2 className='services-bg-title'>From Concept to Completion</h2>
+      </section> */}
+
+      {/* <section className='services-list'>
         {servicesData.map((service, index) => (
           <div key={index} className='service-category'>
             <h3 className='service-category-title'>{service.title}</h3>
@@ -163,8 +178,36 @@ const Services = () => {
             </div>
           </div>
         ))}
-      </section>
+      </section> */}
 
+      <div className='row'>
+        <h2 className='services-title my-5'>Our Projects</h2>
+        {OurProjectLeft.map((project, index) =>
+          <div className='col-lg-4 col-md-6 mb-4'>
+            <div key={index} className='our-projects-image-container w-100'>
+              <img src={project.image} alt='Image one' width="100%" height="100%" className='our-projects-image' />
+              <div className='hero-image-overlay '></div>
+              <div className='our-projects-content'>
+                <h6>{project.place}</h6>
+                <p className='m-0'>{project.model}</p>
+              </div>
+            </div>
+          </div>
+
+        )}
+        {OurProjectRight.map((project, index) =>
+          <div className='col-lg-4 col-md-6 mb-4'>
+            <div key={index} className='our-projects-image-container w-100'>
+              <img src={project.image} alt='Image one' width="100%" height="100%" className='our-projects-image' />
+              <div className='hero-image-overlay '></div>
+              <div className='our-projects-content'>
+                <h6>{project.place}</h6>
+                <p className='m-0'>{project.model}</p>
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
       <section className='my-5'>
         <h2 className='services-subtitle text-center'>Why Choose Us?</h2>
         <p className='services-description'>
@@ -197,6 +240,10 @@ const Services = () => {
           </div>
         </div>
       </section>
+      <h3 className='services-title m-0'>Why wait?</h3>
+      <p className='services-description '> <br/>Let’s showcase your brand alongside our esteemed clients and<br/> make your success part of our achievements!<br/><Link to='/contact' onClick={handleScrollToTop} >  Contact Us</Link></p>
+
+      
     </div>
   );
 };

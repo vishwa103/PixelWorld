@@ -82,10 +82,7 @@ const Blog = () => {
                         <h1 className=' blog-title'>Illuminating Ideas: Explore the World of LED Displays</h1>
 
                         <h2 className=' blog-text'>Discover insights, trends, and solutions for events, advertising, and beyond.</h2>
-                        {/* <div className='d-flex flex-column gap-1'>
-                                <a href='https://wa.me/+971585321473' className='text-decoration-none' target='_blank'><button className='buttonTwo d-flex align-items-center gap-2'><FaWhatsapp /> +971585321473</button></a>
-                                <a href='https://wa.me/+971555131473' className='text-decoration-none' target='_blank'><button className='buttonTwo d-flex align-items-center gap-2'><FaWhatsapp /> +971555131473</button></a>
-                            </div> */}
+                       
                     </div>
                 </div>
             </div>

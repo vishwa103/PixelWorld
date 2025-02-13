@@ -11,7 +11,10 @@ import FAQ from './components/FAQ';
 import Product from './pages/Product';
 import BlogIndividualPage from './pages/BlogIndividualPage';
 import Blog from './pages/Blog';
-import Products from './pages/Products';
+// import Products from './pages/Products';
+import ContactUs from './pages/ContactUs';
+import Industries from './pages/Industries';
+import Industry from './pages/IndustryIndividualPage';
 
 function App() {
 
@@ -22,12 +25,14 @@ function App() {
         <Routes >
           <Route path="/" element={<Home />} />
           <Route path="/aboutus" element={<AboutUs />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/products" element={<Products />} />
+          <Route path="/projects" element={<Services />} />
+          {/* <Route path="/products" element={<Products />} /> */}
+          <Route path="/industries" element={<Industries />} />
+          <Route path="/industry/:industryKey" element={<Industry />} />
           <Route path="/product/:productKey" element={<Product />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:blogKey" element={<BlogIndividualPage />} />
-
+          <Route path="/contact" element={<ContactUs />} />
           <Route path="/faq" element={<FAQ />} />
         </Routes>
         </div>

@@ -5,37 +5,15 @@ import innovateDisplayImage from '../assets/InnovateDisplayImage.png'
 import logo from '../assets/px-logo-web.png'
 import { Helmet } from 'react-helmet';
 
-import Project1 from '../assets/OurProjects/1.jpg'
-import Project2 from '../assets/OurProjects/2.jpg'
-import Project3 from '../assets/OurProjects/3.jpg'
-import Project4 from '../assets/OurProjects/4.jpg'
-import Project5 from '../assets/OurProjects/5.jpg'
-import Project6 from '../assets/OurProjects/6.jpg'
-import Project7 from '../assets/OurProjects/7.jpg'
-import Project8 from '../assets/OurProjects/8.jpg'
-import Project9 from '../assets/OurProjects/9.jpg'
-import Project10 from '../assets/OurProjects/10.jpg'
-import Project11 from '../assets/OurProjects/11.jpg'
-import Project12 from '../assets/OurProjects/12.jpg'
-import Project13 from '../assets/OurProjects/13.jpg'
-import Project14 from '../assets/OurProjects/14.jpg'
-import Project15 from '../assets/OurProjects/15.jpg'
-import Project16 from '../assets/OurProjects/16.jpg'
-import Project17 from '../assets/OurProjects/17.jpg'
-import Project18 from '../assets/OurProjects/18.jpg'
-import Project19 from '../assets/OurProjects/19.jpg'
-import Project20 from '../assets/OurProjects/20.jpg'
-
-
 
 
 
 import Marquee from "react-fast-marquee";
-import ImageOne from '../assets/ImageOne.jpg'
-import ImageTwo from '../assets/ImageTwo.png'
-import ImageThree from '../assets/ImageThree.jpg'
-import ImageFour from '../assets/ImageFour.png'
-import ImageFive from '../assets/ImageFive.jpg'
+// import ImageOne from '../assets/ImageOne.jpg'
+// import ImageTwo from '../assets/ImageTwo.png'
+// import ImageThree from '../assets/ImageThree.jpg'
+// import ImageFour from '../assets/ImageFour.png'
+// import ImageFive from '../assets/ImageFive.jpg'
 import AboutUsHome from '../assets/AboutUsHome.jpg'
 
 
@@ -53,6 +31,7 @@ import { FaWhatsapp } from 'react-icons/fa'
 import exploreData from '../data/exploreData';
 import { Link } from 'react-router-dom';
 import { MdKeyboardArrowRight } from 'react-icons/md';
+import { OurProjectLeft, OurProjectRight } from '../data/ProjectsData';
 
 
 const cardData = [
@@ -112,113 +91,24 @@ Choose Pixelworld for your advertising needs and experience the perfect blend of
     // },
 ];
 
-const OurProjectLeft = [
-    {
-        image: Project1,
-        place: 'Quttainah Specialized Hospital',
-        model: 'P3.9 Outdoor Led Screen'
-    },
-    {
-        image: Project2,
-        place: 'Ministry of Finance, Dubai ',
-        model: 'P1.86 Indoor Curve Led Screen'
-    },
-    {
-        image: Project3,
-        place: 'VIP Design Luxury Automobile',
-        model: 'P2.5 Indoor Led Screen'
-    },{
-        image: Project4,
-        place: 'NARA Lounge & Ba',
-        model: 'P2.9 Indoor Led Screen'
-    },{
-        image: Project5,
-        place: 'Daylone Marine Yacht',
-        model: 'P5 Outdoor Led Screen with Cabinet'
-    },{
-        image: Project6,
-        place: 'The Curve Building',
-        model: 'P2.9 Semi Indoor Led Screen'
-    },{
-        image: Project7,
-        place: 'Link Mara Restaurant',
-        model: 'P3.9 Semi Indoor Led Screen'
-    },{
-        image: Project8,
-        place: 'Kamdhenu Cars',
-        model: 'P2.5 Indoor Led Screen'
-    },{
-        image: Project9,
-        place: 'Great Food Dubai',
-        model: 'P2.5 Indoor Led Screen'
-    },{
-        image: Project10,
-        place: 'Play Game Mobiles',
-        model: 'Led Signage, LightBox & Sticker'
-    },
-];
 
-const OurProjectRight = [
-    {
-        image: Project11,
-        place: 'The Villa Abu Dhabi',
-        model: ' Facade Lighting'
-    },{
-        image: Project12,
-        place: 'Aertex Al Ain Mall ',
-        model: 'P2.5 Indoor Led Screen'
-    },{
-        image: Project13,
-        place: 'Idyllic Interior Design',
-        model: 'Stretch Ceiling with Cloud Print'
-    },{
-        image: Project14,
-        place: 'Tech Wings LLC',
-        model: 'P2.5 Led Screen and Linear Light'
-    },{
-        image: Project15,
-        place: 'Baranda Lebanese Restaurant',
-        model: ' P4 Outdoor Led Screen'
-    },{
-        image: Project16,
-        place: 'Dubai Tennis Stadium',
-        model: 'P2.5 Indoor Led Screen with Sound system'
-    },{
-        image: Project17,
-        place: 'Link By Mara',
-        model: 'P3.91 Outdoor Led Screen with sound system'
-    },{
-        image: Project18,
-        place: 'Bayara Carrefour',
-        model: 'P2.5 Indoor Led Pillar Screen'
-    },{
-        image: Project19,
-        place: 'Citymax Hotels',
-        model: 'P2.5 Indoor Led Screen'
-    },{
-        image: Project20,
-        place: 'RedX Media Event Management ',
-        model: 'P3.91 Outdoor Led Screen'
-    },
-  
-];
 
 
 const Home = () => {
 
     const handleScrollToTop = () => {
         window.scrollTo({
-          top: 0, // Scroll to the top of the page
-          behavior: 'smooth', // Smooth scroll animation
+            top: 0, // Scroll to the top of the page
+            behavior: 'smooth', // Smooth scroll animation
         });
-      };
+    };
 
-      const schemaData = {
+    const schemaData = {
         "@context": "https://schema.org",
         "@type": "Organization",
         "name": "Pixelworld",
         "url": "https://www.pixelworld.ae",
-        "logo": {logo}, // Replace with your logo URL
+        "logo": { logo }, // Replace with your logo URL
         "description": "Discover Pixelworld's innovative LED screen advertising solutions. From indoor and outdoor LED screens to traditional advertising, we bring your brand to life.",
         "contactPoint": {
             "@type": "ContactPoint",
@@ -239,8 +129,8 @@ const Home = () => {
     return (
         <div className='home'>
             <Helmet>
-            <title>LED Screen Suppliers in Dubai | Display Screen | LED Display</title>
-            <meta name="description" content="Leading outdoor LED screen supplier in Dubai. High-quality LED screen displays and display screens. Call now for the best LED solutions in Dubai!" />
+                <title>LED Screen Suppliers in Dubai | Display Screen | LED Display</title>
+                <meta name="description" content="Leading outdoor LED screen supplier in Dubai. High-quality LED screen displays and display screens. Call now for the best LED solutions in Dubai!" />
                 <meta name="keywords" content="led screen suppliers in dubai, outdoor led screen supplier in dubai, display screen, led screen display" />
                 <link rel="canonical" href="https://www.pixelworld.ae" />
                 <meta name="twitter:image" content={heroImage} />
@@ -287,24 +177,24 @@ const Home = () => {
                         {cardData.map((card, index) => (
                             <div key={index} className='col-lg-8  mb-2'>
                                 {/* <div className='innovateDisplay-card'> */}
-                                    {/* <div className='innovateDisplay-card-title'>{card.title}</div> */}
-                                    {/* <h2 className='innovateDisplay-card-description' dangerouslySetInnerHTML={{ __html: card?.description }} />
+                                {/* <div className='innovateDisplay-card-title'>{card.title}</div> */}
+                                {/* <h2 className='innovateDisplay-card-description' dangerouslySetInnerHTML={{ __html: card?.description }} />
                                      */}
-                                    <h2 className='innovateDisplay-card-description'>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dubai LED Screen Supplier offers premium-quality indoor and outdoor LED screens along with digital advertising solutions for to your needs. We provide customizable LED video walls at affordable prices, ensuring durable products that meet both installation and rental requirements. As a leading LED screen supplier in the UAE, recognized internationally, we handle projects of all sizes, from small businesses to large enterprises.
-                                        <br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;At Pixelworld, we specialize in delivering creative, cost-effective LED screen solutions for various applications, including LED video walls for exhibitions, affordable LED displays for trade shows, and outdoor LED screens for advertising in Dubai. Our award-winning products include high-resolution LED screen rentals for events and stages, permanent installations, and custom LED screen designs.
-                                        <br /><br />Whether you're a global company or a local business looking for cheap but high-quality LED screens in UAE, we ensure your brand connects with your audience through visually stunning LED displays. With our affordable digital signage in Dubai, you can enhance your marketing efforts and achieve outstanding results.
-                                        <br /><br /> Choose Pixelworld for reliable, budget-friendly LED solutions, including LED screens for events in UAE, custom LED walls for conferences, LED video wall, LED signage for retail stores for your shop front sign and indoor LED screens for retail stores. Let us help you elevate your brand with top-rated, energy-efficient LED screens that offer exceptional quality and performance.
-                                        <br /><br />"Are you still looking for LED screens in Dubai? Please contact us to receive the best quote and discover the perfect LED screen solution for your business."
-                                        {/* <b>Indoor LED Screens:</b> High-quality displays for retail, schools, offices, and meeting rooms.<br />
+                                <h2 className='innovateDisplay-card-description'>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dubai LED Screen Supplier offers premium-quality indoor and outdoor LED screens along with digital advertising solutions for to your needs. We provide customizable LED video walls at affordable prices, ensuring durable products that meet both installation and rental requirements. As a leading LED screen supplier in the UAE, recognized internationally, we handle projects of all sizes, from small businesses to large enterprises.
+                                    <br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;At Pixelworld, we specialize in delivering creative, cost-effective LED screen solutions for various applications, including LED video walls for exhibitions, affordable LED displays for trade shows, and outdoor LED screens for advertising in Dubai. Our award-winning products include high-resolution LED screen rentals for events and stages, permanent installations, and custom LED screen designs.
+                                    <br /><br />Whether you're a global company or a local business looking for cheap but high-quality LED screens in UAE, we ensure your brand connects with your audience through visually stunning LED displays. With our affordable digital signage in Dubai, you can enhance your marketing efforts and achieve outstanding results.
+                                    <br /><br /> Choose Pixelworld for reliable, budget-friendly LED solutions, including LED screens for events in UAE, custom LED walls for conferences, LED video wall, LED signage for retail stores for your shop front sign and indoor LED screens for retail stores. Let us help you elevate your brand with top-rated, energy-efficient LED screens that offer exceptional quality and performance.
+                                    <br /><br />"Are you still looking for LED screens in Dubai? Please contact us to receive the best quote and discover the perfect LED screen solution for your business."
+                                    {/* <b>Indoor LED Screens:</b> High-quality displays for retail, schools, offices, and meeting rooms.<br />
                                         <br /><b>Outdoor LED Screens:</b> Durable screens for billboards and large ads.<br />
                                         <br /><b>LED Signage:</b> Digital signage for menus, information, and store signs.<br />
                                         <br /><b>Home & Office LED Solutions:</b> Stylish and affordable LED screens for homes and offices.<br />
                                         <br /><b>Custom LED Walls:</b> Flexible and unique LED designs, including 90° and 360° screens.<br />
                                         <br /><b>Transparent LED:</b> Innovative displays for retail and creative spaces.<br />
                                         <br /><b>3D and Floor LEDs:</b> Cutting-edge technology for immersive experiences.<br /> */}
-                                        {/* <br /> <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Welcome to Pixelworld, your ultimate destination for innovative LED screen advertising solutions that transform how brands connect with their audiences. Whether you're a global enterprise or a local business, we bring unparalleled expertise in LED screen technology, creating visually stunning displays that leave a lasting impact.<br /> */}
-                                        {/* <br /><strong>Our Expertise</strong><br /><br />
+                                    {/* <br /> <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Welcome to Pixelworld, your ultimate destination for innovative LED screen advertising solutions that transform how brands connect with their audiences. Whether you're a global enterprise or a local business, we bring unparalleled expertise in LED screen technology, creating visually stunning displays that leave a lasting impact.<br /> */}
+                                    {/* <br /><strong>Our Expertise</strong><br /><br />
                                         At Pixelworld, we specialize in state-of-the-art LED screen technology designed to deliver breathtaking visuals that captivate audiences.
                                         <br />•	Indoor LED Screens: High-definition displays for retail, schools, meeting rooms, and corporate offices.
                                         <br />•	Outdoor LED Screens: Durable and weather-resistant screens for billboards and large-scale advertisements.
@@ -359,13 +249,13 @@ const Home = () => {
                                         <br />
                                         <br />
                                         Choose Pixelworld for your advertising needs and experience the perfect blend of innovation, artistry, and engineering. With every detail of your campaign carefully crafted, we ensure your brand is the center of attention, delivering unforgettable results with cutting-edge LED technology. */}
-                                    </h2>
+                                </h2>
                                 {/* </div> */}
                             </div>
                         ))}
                         <div className='col-lg-4'>
                             <div className='explore-image-container'>
-                            <img src={AboutUsHome} alt='About Us Home' className='explore-image' width="100%" height="100%" />
+                                <img src={AboutUsHome} alt='About Us Home' className='explore-image' width="100%" height="100%" />
                             </div>
                         </div>
                     </div>
@@ -407,18 +297,18 @@ const Home = () => {
                                 <CiDiscount1 size={24} />
                             </div>
                             <div className='occasionReady-card-description'>
-                               
+
                                 •	Interactive Touchscreen Kiosks
-•	Self-Service Digital Kiosks
-•	Indoor & Outdoor Digital Kiosks
-•	Wayfinding Digital Kiosks
-•	Digital Kiosks for Retail and Malls
-•	Queue Management Kiosks
-•	Digital Menu Boards
-•	Information and Directory Kiosks
-•	Advertising and Promotion Kiosks
-•	Customizable Digital Kiosks for Branding
-                                
+                                •	Self-Service Digital Kiosks
+                                •	Indoor & Outdoor Digital Kiosks
+                                •	Wayfinding Digital Kiosks
+                                •	Digital Kiosks for Retail and Malls
+                                •	Queue Management Kiosks
+                                •	Digital Menu Boards
+                                •	Information and Directory Kiosks
+                                •	Advertising and Promotion Kiosks
+                                •	Customizable Digital Kiosks for Branding
+
                             </div>
                         </div>
                     </div>
@@ -430,19 +320,19 @@ const Home = () => {
                                 <VscTools size={24} />
                             </div>
                             <div className='occasionReady-card-description'>
-                            •	High-Resolution Indoor LED Displays
-•	LED Screens for Retail and Showrooms
-•	Corporate Office LED Displays
-•	LED Displays for Meeting Rooms and Conferences
-•	Interactive Indoor LED Screens
-•	Flexible LED Screens for Custom Installations
-•	90° and 360° Curved LED Screens
-•	Digital Signage for Indoor Advertising
-•	Indoor LED Walls for Events and Exhibitions
-•	Custom Indoor LED Solutions for Branding
-•	Seamless Video Walls for Immersive Experiences
-•	Energy-Efficient LED Displays for Long-Term Use
-</div>
+                                •	High-Resolution Indoor LED Displays
+                                •	LED Screens for Retail and Showrooms
+                                •	Corporate Office LED Displays
+                                •	LED Displays for Meeting Rooms and Conferences
+                                •	Interactive Indoor LED Screens
+                                •	Flexible LED Screens for Custom Installations
+                                •	90° and 360° Curved LED Screens
+                                •	Digital Signage for Indoor Advertising
+                                •	Indoor LED Walls for Events and Exhibitions
+                                •	Custom Indoor LED Solutions for Branding
+                                •	Seamless Video Walls for Immersive Experiences
+                                •	Energy-Efficient LED Displays for Long-Term Use
+                            </div>
                         </div>
                     </div>
 
@@ -453,19 +343,19 @@ const Home = () => {
                                 <IoPeopleOutline size={24} />
                             </div>
                             <div className='occasionReady-card-description'>
-                            •	High-Resolution Outdoor LED Displays
-•	LED Screens for Billboards and Digital Signage
-•	Weatherproof Outdoor LED Screens
-•	Outdoor Advertising LED Walls
-•	Large-Scale LED Displays for Events
-•	Interactive Outdoor LED Screens
-•	Outdoor Mesh and Net LED Screens
-•	LED Screens for Stadiums and Arenas
-•	Digital Menu Boards for Outdoor Spaces
-•	Customizable Outdoor LED Displays for Branding
-•	Outdoor LED Screens for Public Spaces and Malls
-•	Solar-Powered Outdoor LED Solutions
-•	Energy-Efficient Outdoor LED Screens for Long-Term Use
+                                •	High-Resolution Outdoor LED Displays
+                                •	LED Screens for Billboards and Digital Signage
+                                •	Weatherproof Outdoor LED Screens
+                                •	Outdoor Advertising LED Walls
+                                •	Large-Scale LED Displays for Events
+                                •	Interactive Outdoor LED Screens
+                                •	Outdoor Mesh and Net LED Screens
+                                •	LED Screens for Stadiums and Arenas
+                                •	Digital Menu Boards for Outdoor Spaces
+                                •	Customizable Outdoor LED Displays for Branding
+                                •	Outdoor LED Screens for Public Spaces and Malls
+                                •	Solar-Powered Outdoor LED Solutions
+                                •	Energy-Efficient Outdoor LED Screens for Long-Term Use
                             </div>
                         </div>
                     </div>
@@ -500,66 +390,66 @@ const Home = () => {
             <div className='our-projects-container'>
                 {/* <p className='our-project-subtext'>Still Searching ?...</p> */}
                 <h2 className='our-project-title'>Our Projects and Clients</h2>
-            <div className='my-3'>
-                <Marquee direction='left' pauseOnHover={true} className='mb-3'>
-                    {OurProjectLeft.map((project, index) => 
-                    <div key={index} className='our-projects-image-container'>
-                        <img src={project.image} alt='Image one' width="100%" height="100%" className='our-projects-image' />
-                        <div className='hero-image-overlay '></div>
-                        <div className='our-projects-content'>
-                            <h6>{project.place}</h6>
-                            <p className='m-0'>{project.model}</p>
-                        </div>
-                    </div>
-                    )}
-               </Marquee>
-
-                <Marquee direction='right'  pauseOnHover={true}  className='mb-3'>
-                {OurProjectRight.map((project, index) => 
-                    <div key={index} className='our-projects-image-container'>
-                        <img src={project.image} alt='Image one' width="100%" height="100%" className='our-projects-image' />
-                        <div className='hero-image-overlay '></div>
-                        <div className='our-projects-content'>
-                            <h6>{project.place}</h6>
-                            <p className='m-0'>{project.model}</p>
-                        </div>
-                    </div>
-                    )}
-                </Marquee>
-                </div>
-
-            </div>
-<div className='px-3'>
-    <div className='d-flex justify-content-between align-items-center'>
-            <h2 className='product-title text-white'>Recent News Post</h2>
-            <Link onClick={handleScrollToTop}  to='/blog'>
-            <button className='button-primary'>View All <MdKeyboardArrowRight /></button></Link>
-            </div>
-            <div className='d-flex justify-content-between align-items-center'>
-                <div className='row'>
-                    {exploreData.slice(0,4).map((item, index) => (
-                        <>
-                            <div key={index} className='col-md-4'>
-                                <Link onClick={handleScrollToTop} to={`/blog/${item.blogKey}`} className='text-decoration-none text-dark' >
-                                    <div className='service-item'>
-                                        <div className='service-image-container'>
-                                            <img
-                                                src={item.image}
-                                                alt={item.title}
-                                                className='service-image'
-                                                loading='lazy'
-                                                height="100%"
-                                                width="100%"
-                                            />
-                                        </div>
-                                        <p className='service-text'>{item.title}</p>
-                                        <button className='blog-button'>Read more</button>
-                                    </div>
-                                </Link>
+                <div className='my-3'>
+                    <Marquee direction='left' pauseOnHover={true} className='mb-3'>
+                        {OurProjectLeft.map((project, index) =>
+                            <div key={index} className='our-projects-image-container'>
+                                <img src={project.image} alt='Image one' width="100%" height="100%" className='our-projects-image' />
+                                <div className='hero-image-overlay '></div>
+                                <div className='our-projects-content'>
+                                    <h6>{project.place}</h6>
+                                    <p className='m-0'>{project.model}</p>
+                                </div>
                             </div>
-                        </>
-                    ))}
+                        )}
+                    </Marquee>
+
+                    <Marquee direction='right' pauseOnHover={true} className='mb-3'>
+                        {OurProjectRight.map((project, index) =>
+                            <div key={index} className='our-projects-image-container'>
+                                <img src={project.image} alt='Image one' width="100%" height="100%" className='our-projects-image' />
+                                <div className='hero-image-overlay '></div>
+                                <div className='our-projects-content'>
+                                    <h6>{project.place}</h6>
+                                    <p className='m-0'>{project.model}</p>
+                                </div>
+                            </div>
+                        )}
+                    </Marquee>
                 </div>
+
+            </div>
+            <div className='px-3'>
+                <div className='d-flex justify-content-between align-items-center'>
+                    <h2 className='product-title text-white'>Recent News Post</h2>
+                    <Link onClick={handleScrollToTop} to='/blog'>
+                        <button className='button-primary'>View All <MdKeyboardArrowRight /></button></Link>
+                </div>
+                <div className='d-flex justify-content-between align-items-center'>
+                    <div className='row'>
+                        {exploreData.slice(0, 4).map((item, index) => (
+                            <>
+                                <div key={index} className='col-md-4'>
+                                    <Link onClick={handleScrollToTop} to={`/blog/${item.blogKey}`} className='text-decoration-none text-dark' >
+                                        <div className='service-item'>
+                                            <div className='service-image-container'>
+                                                <img
+                                                    src={item.image}
+                                                    alt={item.title}
+                                                    className='service-image'
+                                                    loading='lazy'
+                                                    height="100%"
+                                                    width="100%"
+                                                />
+                                            </div>
+                                            <p className='service-text'>{item.title}</p>
+                                            <button className='blog-button'>Read more</button>
+                                        </div>
+                                    </Link>
+                                </div>
+                            </>
+                        ))}
+                    </div>
                 </div>
             </div>
             <FAQ showAll={false} />
